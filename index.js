@@ -40,7 +40,7 @@ io.on('connection', socket => {
 });
 
 
-const port = process.env.NODE_PORT ? process.env.NODE_PORT : 3000;
+const port = process.env.NODE_PORT ? process.env.NODE_PORT : (process.env.PORT ? process.env.PORT : 3000);
 
 console.log('Running socket.io in ' + port);
 server.listen(port);
