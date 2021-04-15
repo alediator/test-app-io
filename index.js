@@ -4,6 +4,9 @@ var cors = require('cors')
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
+// demo folder
+app.use(express.static('demo'));
+
 app.use(cors());
 
 // root head
