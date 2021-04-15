@@ -5,7 +5,7 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
 // demo folder
-app.use(express.static(__dirname + '/demo'));
+app.use('/demo', express.static('demo'));
 
 app.use(cors());
 
