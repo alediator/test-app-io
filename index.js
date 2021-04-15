@@ -3,8 +3,15 @@ const app = express();
 var cors = require('cors')
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
+const path = require('path');
 
 app.use(cors());
+
+app.use('/static', express.static('public'));
+
+app.get('/**', (req, res) => {
+    return res.sendfile(path.join(__dirname + '/public/index.html'));
+});
 
 // root head
 app.head('/', function(req, res){
