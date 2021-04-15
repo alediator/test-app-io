@@ -445,7 +445,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
             _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__["BrowserAnimationsModule"],
             ngx_socket_io__WEBPACK_IMPORTED_MODULE_8__["SocketIoModule"].forRoot({
-                url: 'https://test-app-io.herokuapp.com'
+                url: '/'
             })
         ],
         providers: [],
@@ -558,7 +558,7 @@ let RoomComponent = class RoomComponent {
     ngOnInit() {
         console.log(`Initialize Peer with id ${this.currentUserId}`);
         const myPeer = new Peer(this.currentUserId, {
-            url: 'https://test-app-peer.herokuapp.com'
+            path: '/peerjs/'
         });
         this.route.params.subscribe((params) => {
             console.log(params);

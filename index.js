@@ -3,11 +3,17 @@ const app = express();
 var cors = require('cors')
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
+var ExpressPeerServer = require('peer').ExpressPeerServer;
+
+app.use(cors());
 
 // demo folder
 app.use('/demo', express.static('demo'));
 
-app.use(cors());
+// peerjs folder
+app.use('/peerjs', ExpressPeerServer(server, {
+    debug: true
+}));
 
 // root head
 app.head('/', function(req, res){

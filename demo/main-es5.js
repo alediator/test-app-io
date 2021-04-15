@@ -919,7 +919,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
       declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _room_room_component__WEBPACK_IMPORTED_MODULE_6__["RoomComponent"], _home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"]],
       imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__["BrowserAnimationsModule"], ngx_socket_io__WEBPACK_IMPORTED_MODULE_8__["SocketIoModule"].forRoot({
-        url: 'https://test-app-io.herokuapp.com'
+        url: '/'
       })],
       providers: [],
       bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -1121,7 +1121,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           console.log("Initialize Peer with id ".concat(this.currentUserId));
           var myPeer = new Peer(this.currentUserId, {
-            url: 'https://test-app-peer.herokuapp.com'
+            path: '/peerjs/'
           });
           this.route.params.subscribe(function (params) {
             console.log(params);
