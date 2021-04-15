@@ -8,7 +8,7 @@ var ExpressPeerServer = require('peer').ExpressPeerServer;
 app.use(cors());
 
 // demo folder
-app.use('/demo', express.static('demo'));
+app.use('/', express.static('demo'));
 
 // peerjs folder
 app.use('/peerjs', ExpressPeerServer(server, {
@@ -16,7 +16,7 @@ app.use('/peerjs', ExpressPeerServer(server, {
 }));
 
 // root head
-app.head('/', function(req, res){
+app.head('/ping', function(req, res){
     console.log('Ping received');
     res.sendStatus(204);
 });
