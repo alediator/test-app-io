@@ -35,8 +35,8 @@ io.on('connection', socket => {
     socket.on('leave-room', (roomId, userId, { roomName, userName }) => {
         socket.to(roomId).broadcast.emit('user-disconnected', userId, { roomName, userName });
         console.log(`User (${userId}) "${userName}" left "${roomName}" (${roomId})`);
-        var clients = io.sockets.adapter.rooms[roomId].sockets;
-        console.log('Users left', clients);
+        // var clients = io.sockets.adapter.rooms[roomId].sockets;
+        // console.log('Users left', clients);
         // socket.disconnect();
     })
 
