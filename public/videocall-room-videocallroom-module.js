@@ -1095,7 +1095,7 @@ class VideoCallRoomComponent {
         this.route.params.subscribe((params) => {
             console.log(params);
             // Room identifier: from the url
-            // this.roomId = params.roomId;
+            this.roomId = params.roomId;
             this.myPeer.on('open', () => {
                 this.joinRoom(this.roomId);
             });
@@ -1163,6 +1163,7 @@ class VideoCallRoomComponent {
      * Current peer joins the selected room.
      */
     joinRoom(roomId) {
+        console.log('Joining ', this.currentUserId, ' to ', roomId);
         this.socket.emit('join-room', roomId, this.currentUserId, {
             userName: this.currentUserName,
             roomName: this.roomName
