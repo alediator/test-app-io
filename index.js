@@ -21,7 +21,9 @@ app.head('/_ping', function(req, res){
 
 io.on('connection', socket => {
     console.log('Socket conneted ' + socket.id);
-    socket.on('join-room', (roomId, userId, { roomName, userName }) => {
+    socket.on('join-room', (roomId, userId, metadata) => {
+        userName = metadata && metadata.userName ? metadata.userName: null;
+        roomName = metadata && metadata.roomName ? metadata.roomName: null;
         console.log(`User (${userId}) "${userName}" joined "${roomName}" (${roomId})`);
         socket.join(roomId);
         socket.to(roomId).broadcast.emit('user-connected', userId, { roomName, userName });
@@ -32,7 +34,9 @@ io.on('connection', socket => {
         })
     });
 
-    socket.on('leave-room', (roomId, userId, { roomName, userName }) => {
+    socket.on('leave-room', (roomId, userId, metadata) => {
+        userName = metadata && metadata.userName ? metadata.userName: null;
+        roomName = metadata && metadata.roomName ? metadata.roomName: null;
         socket.to(roomId).broadcast.emit('user-disconnected', userId, { roomName, userName });
         console.log(`User (${userId}) "${userName}" left "${roomName}" (${roomId})`);
         // var clients = io.sockets.adapter.rooms[roomId].sockets;
