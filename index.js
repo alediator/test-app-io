@@ -37,7 +37,7 @@ io.on('connection', socket => {
         console.log(`User (${userId}) "${userName}" left "${roomName}" (${roomId})`);
         var clients = io.sockets.adapter.rooms[roomId].sockets;
         console.log('Users left', clients);
-        socket.disconnect();
+        // socket.disconnect();
     })
 
     socket.on("disconnect", (reason) => {
