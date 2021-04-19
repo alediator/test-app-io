@@ -9,6 +9,8 @@ app.use(cors());
 
 app.use('/static', express.static('public'));
 
+app.use('/assets', express.static('public/assets'));
+
 app.get('/**', (req, res) => {
     return res.sendfile(path.join(__dirname + '/public/index.html'));
 });
