@@ -21,20 +21,20 @@ app.head('/', function(req, res){
 
 io.on('connection', socket => {
     console.log('Socket conneted ' + socket.id);
-    socket.on('join-room', (roomId, userId, roomName, userName) => {
-        console.log('User (' + userId + ') "'  + userName + '" joined (' + roomId + ') "' + roomName + '"');
+    socket.on('join-room', (roomId, userId, { roomName, userName }) => {
+        console.log(`User (${userId}) "${userName}" joined "${roomName}" (${roomId})`);
         socket.join(roomId);
-        socket.to(roomId).broadcast.emit('user-connected', userId);
+        socket.to(roomId).broadcast.emit('user-connected', userId, { roomName, userName });
 
         socket.on('disconnect', () => {
-            socket.to(roomId).broadcast.emit('user-disconnected', userId);
-            console.log('User (' + userId + ') "'  + userName + '" left (' + roomId + ') "' + roomName + '" (disconnected)');
+            socket.to(roomId).broadcast.emit('user-disconnected', userId, { roomName, userName });
+            console.log(`User (${userId}) "${userName}" left "${roomName}" (${roomId}) (disconnected)`);
         })
     });
 
-    socket.on('leave-room', (roomId, userId, roomName, userName) => {
-        socket.to(roomId).broadcast.emit('user-disconnected', userId);
-        console.log('User (' + userId + ') "'  + userName + '" left (' + roomId + ') "' + roomName + '"');
+    socket.on('leave-room', (roomId, userId, { roomName, userName }) => {
+        socket.to(roomId).broadcast.emit('user-disconnected', userId, { roomName, userName });
+        console.log(`User (${userId}) "${userName}" left "${roomName}" (${roomId})`);
         var clients = io.sockets.adapter.rooms[roomId].sockets;
         console.log('Users left', clients);
         socket.disconnect();
@@ -45,7 +45,6 @@ io.on('connection', socket => {
         console.log('Rooms: ', io.sockets.adapter.rooms);
     });
 });
-
 
 const port = process.env.NODE_PORT ? process.env.NODE_PORT : (process.env.PORT ? process.env.PORT : 3000);
 
