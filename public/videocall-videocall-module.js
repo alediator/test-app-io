@@ -77,6 +77,7 @@ class VideoCallComponent {
         if (this.joincallFormGroup.valid) {
             console.log(this.code);
             if (this.code) {
+                this.router.navigate([`/video-call/${this.code}`]);
             }
         }
     }
