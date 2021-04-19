@@ -574,7 +574,7 @@ class RoomConfigFormComponent {
         }
         const storedConfig = JSON.parse(localStorage.getItem('roomConfig'));
         this.roomConfigFormGroup = this.fb.group({
-            roomId: [''],
+            roomId: [this.roomId],
             name: [storedConfig ? storedConfig.name : ''],
             username: [storedConfig ? storedConfig.username : ''],
             camera: [storedConfig ? storedConfig.camera : true],
@@ -605,6 +605,14 @@ class RoomConfigFormComponent {
      */
     joinRoom() {
         console.log('joinRoom');
+        const storedConfig = JSON.parse(localStorage.getItem('roomConfig'));
+        localStorage.setItem('roomConfig', JSON.stringify({
+            roomId: this.roomConfigFormGroup.value.roomId,
+            name: storedConfig.name,
+            username: this.roomConfigFormGroup.value.username,
+            micro: this.roomConfigFormGroup.value.microphone,
+            camera: this.roomConfigFormGroup.value.camera,
+        }));
         this.router.navigate([`/video-call/${this.roomConfigFormGroup.value.roomId}`]);
         this.ref.close();
     }

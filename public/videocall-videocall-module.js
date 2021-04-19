@@ -41,8 +41,12 @@ class VideoCallComponent {
     }
     ngOnInit() {
         console.log('ngOnInit');
+        const storedConfig = JSON.parse(localStorage.getItem('roomConfig'));
         this.joincallFormGroup = this.fb.group({
-            codeInput: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]]
+            codeInput: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+            username: [storedConfig ? storedConfig.username : ''],
+            camera: [storedConfig ? storedConfig.camera : true],
+            microphone: [storedConfig ? storedConfig.microphone : true]
         });
         if (this.route.snapshot.params.id !== '') {
             this.code = this.route.snapshot.params.id;
@@ -75,7 +79,17 @@ class VideoCallComponent {
     joinRoom() {
         console.log('joinRoom');
         if (this.joincallFormGroup.valid) {
+            // Save updated value
             console.log(this.code);
+            const storedConfig = JSON.parse(localStorage.getItem('roomConfig'));
+            localStorage.setItem('roomConfig', JSON.stringify({
+                roomId: this.code,
+                name: storedConfig.name,
+                username: this.joincallFormGroup.value.username,
+                micro: this.joincallFormGroup.value.microphone,
+                camera: this.joincallFormGroup.value.camera,
+            }));
+            console.log(this.joincallFormGroup.value);
             if (this.code) {
                 this.router.navigate([`/video-call/${this.code}`]);
             }
