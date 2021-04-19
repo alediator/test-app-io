@@ -14,7 +14,7 @@ app.get('/**', (req, res) => {
 });
 
 // root head
-app.head('/', function(req, res){
+app.head('/_ping', function(req, res){
     console.log('Ping received');
     res.sendStatus(204);
 });
