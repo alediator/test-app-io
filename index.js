@@ -14,30 +14,34 @@ app.get('/**', (req, res) => {
 });
 
 // root head
-app.head('/', function(req, res){
+app.head('/_ping', function(req, res){
     console.log('Ping received');
     res.sendStatus(204);
 });
 
 io.on('connection', socket => {
     console.log('Socket conneted ' + socket.id);
-    socket.on('join-room', (roomId, userId, roomName, userName) => {
-        console.log('User (' + userId + ') "'  + userName + '" joined (' + roomId + ') "' + roomName + '"');
+    socket.on('join-room', (roomId, userId, metadata) => {
+        userName = metadata && metadata.userName ? metadata.userName: null;
+        roomName = metadata && metadata.roomName ? metadata.roomName: null;
+        console.log(`User (${userId}) "${userName}" joined "${roomName}" (${roomId})`);
         socket.join(roomId);
-        socket.to(roomId).broadcast.emit('user-connected', userId);
+        socket.to(roomId).broadcast.emit('user-connected', userId, { roomName, userName });
 
         socket.on('disconnect', () => {
-            socket.to(roomId).broadcast.emit('user-disconnected', userId);
-            console.log('User (' + userId + ') "'  + userName + '" left (' + roomId + ') "' + roomName + '" (disconnected)');
+            socket.to(roomId).broadcast.emit('user-disconnected', userId, { roomName, userName });
+            console.log(`User (${userId}) "${userName}" left "${roomName}" (${roomId}) (disconnected)`);
         })
     });
 
-    socket.on('leave-room', (roomId, userId, roomName, userName) => {
-        socket.to(roomId).broadcast.emit('user-disconnected', userId);
-        console.log('User (' + userId + ') "'  + userName + '" left (' + roomId + ') "' + roomName + '"');
-        var clients = io.sockets.adapter.rooms[roomId].sockets;
-        console.log('Users left', clients);
-        socket.disconnect();
+    socket.on('leave-room', (roomId, userId, metadata) => {
+        userName = metadata && metadata.userName ? metadata.userName: null;
+        roomName = metadata && metadata.roomName ? metadata.roomName: null;
+        socket.to(roomId).broadcast.emit('user-disconnected', userId, { roomName, userName });
+        console.log(`User (${userId}) "${userName}" left "${roomName}" (${roomId})`);
+        // var clients = io.sockets.adapter.rooms[roomId].sockets;
+        // console.log('Users left', clients);
+        // socket.disconnect();
     })
 
     socket.on("disconnect", (reason) => {
@@ -45,7 +49,6 @@ io.on('connection', socket => {
         console.log('Rooms: ', io.sockets.adapter.rooms);
     });
 });
-
 
 const port = process.env.NODE_PORT ? process.env.NODE_PORT : (process.env.PORT ? process.env.PORT : 3000);
 
