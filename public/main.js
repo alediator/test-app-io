@@ -454,6 +454,223 @@ InterceptorsModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
 
 /***/ }),
 
+/***/ "5Eit":
+/*!********************************************************************************!*\
+  !*** ./src/app/core/components/room-config-form/room-config-form.component.ts ***!
+  \********************************************************************************/
+/*! exports provided: RoomConfigFormComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RoomConfigFormComponent", function() { return RoomConfigFormComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var primeng_api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! primeng/api */ "7zfz");
+/* harmony import */ var _room_config_form_constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./room-config-form.constants */ "m59G");
+/* harmony import */ var uuid_dist_v4__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! uuid/dist/v4 */ "63qc");
+/* harmony import */ var uuid_dist_v4__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(uuid_dist_v4__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
+/* harmony import */ var primeng_dynamicdialog__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! primeng/dynamicdialog */ "J7/z");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var primeng_inputtext__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! primeng/inputtext */ "7kUa");
+/* harmony import */ var primeng_inputswitch__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! primeng/inputswitch */ "rLzU");
+/* harmony import */ var primeng_button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! primeng/button */ "jIHw");
+/* harmony import */ var primeng_tooltip__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! primeng/tooltip */ "xlun");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function RoomConfigFormComponent_div_3_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "label", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "input", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r1.roomConfigFormConstants.LABELS.ID);
+} }
+function RoomConfigFormComponent_div_4_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "label", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "input", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r2.roomConfigFormConstants.LABELS.NAME);
+} }
+function RoomConfigFormComponent_div_18_Template(rf, ctx) { if (rf & 1) {
+    const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "label", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "span");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "button", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function RoomConfigFormComponent_div_18_Template_button_click_5_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r7); const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r6.copyRoomId(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", ctx_r3.roomConfigFormConstants.LABELS.ID, ": ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r3.roomId);
+} }
+function RoomConfigFormComponent_div_19_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "p-button", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("label", ctx_r4.roomConfigFormConstants.LABELS.CREATE);
+} }
+function RoomConfigFormComponent_div_20_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "p-button", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("label", ctx_r5.roomConfigFormConstants.LABELS.JOIN);
+} }
+class RoomConfigFormComponent {
+    constructor(router, fb, messageService, config, ref) {
+        this.router = router;
+        this.fb = fb;
+        this.messageService = messageService;
+        this.config = config;
+        this.ref = ref;
+        this.formSubmitted = false;
+        this.roomConfigFormConstants = _room_config_form_constants__WEBPACK_IMPORTED_MODULE_2__["RoomConfigFormConstants"];
+        this.mode = this.config.data.mode;
+    }
+    ngOnInit() {
+        if (localStorage.getItem('roomId')) {
+            this.roomId = localStorage.getItem('roomId');
+        }
+        else {
+            this.roomId = uuid_dist_v4__WEBPACK_IMPORTED_MODULE_3___default()();
+            localStorage.setItem('roomId', this.roomId);
+        }
+        const storedConfig = JSON.parse(localStorage.getItem('roomConfig'));
+        this.roomConfigFormGroup = this.fb.group({
+            roomId: [''],
+            name: [storedConfig ? storedConfig.name : ''],
+            username: [storedConfig ? storedConfig.username : ''],
+            camera: [storedConfig ? storedConfig.camera : true],
+            microphone: [storedConfig ? storedConfig.microphone : true]
+        });
+    }
+    /**
+     * Copy the room id in the clipboard
+     */
+    copyRoomId() {
+        navigator.clipboard
+            .writeText(this.roomId)
+            .then(() => console.log('copied'))
+            .catch((e) => console.error(e));
+    }
+    /**
+     * Submit the create room form
+     */
+    createRoom() {
+        console.log('createRoom');
+        // store all the room config in localStorage
+        localStorage.setItem('roomConfig', JSON.stringify(this.roomConfigFormGroup.value));
+        this.ref.close();
+        this.router.navigate([`/video-call/${this.roomId}`]);
+    }
+    /**
+     * Submit the join room form
+     */
+    joinRoom() {
+        console.log('joinRoom');
+        this.router.navigate([`/video-call/${this.roomConfigFormGroup.value.roomId}`]);
+        this.ref.close();
+    }
+}
+RoomConfigFormComponent.ɵfac = function RoomConfigFormComponent_Factory(t) { return new (t || RoomConfigFormComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](primeng_api__WEBPACK_IMPORTED_MODULE_1__["MessageService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](primeng_dynamicdialog__WEBPACK_IMPORTED_MODULE_6__["DynamicDialogConfig"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](primeng_dynamicdialog__WEBPACK_IMPORTED_MODULE_6__["DynamicDialogRef"])); };
+RoomConfigFormComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: RoomConfigFormComponent, selectors: [["room-config-form"]], features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([primeng_api__WEBPACK_IMPORTED_MODULE_1__["MessageService"]])], decls: 21, vars: 9, consts: [["id", "room-config-form", "novalidate", "", 1, "room-config-form", 3, "formGroup", "ngSubmit"], ["roomConfigForm", "ngForm"], [1, "p-col-12"], ["class", "p-col-12 room-config-form-input-container", 4, "ngIf"], [1, "p-col-12", "room-config-form-input-container"], ["for", "username", 1, "room-config-form-label"], ["formControlName", "username", "id", "room-username", "pInputText", "", "type", "text", 1, "input-padding"], ["for", "camera", 1, "room-config-form-label"], ["src", "assets/img/video-solid.svg", 1, "room-config-form-label-icon"], ["formControlName", "camera"], ["for", "microphone", 1, "room-config-form-label"], ["src", "assets/img/microphone-solid.svg", 1, "room-config-form-label-icon"], ["formControlName", "microphone"], ["class", "p-offset-10", 4, "ngIf"], ["for", "room-id", 1, "room-config-form-label"], ["formControlName", "roomId", "id", "room-id", "pInputText", "", "type", "text", 1, "input-padding"], ["for", "name", 1, "room-config-form-label"], ["formControlName", "name", "id", "room-name", "pInputText", "", "type", "text", 1, "input-padding"], ["pButton", "", "pRipple", "", "type", "button", "icon", "pi pi-copy", "pTooltip", "Copied!", "tooltipPosition", "top", "tooltipEvent", "focus", 1, "p-button-rounded", "p-button-outlined", 3, "click"], [1, "p-offset-10"], ["styleClass", "room-config-button", "type", "submit", 1, "p-col-2", 3, "label"]], template: function RoomConfigFormComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "form", 0, 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngSubmit", function RoomConfigFormComponent_Template_form_ngSubmit_0_listener() { return ctx.mode === "create" ? ctx.createRoom() : ctx.joinRoom(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, RoomConfigFormComponent_div_3_Template, 4, 1, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, RoomConfigFormComponent_div_4_Template, 4, 1, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "label", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](8, "input", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "label", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](11, "img", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](13, "p-inputSwitch", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "label", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](15, "img", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](17, "p-inputSwitch", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](18, RoomConfigFormComponent_div_18_Template, 6, 2, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](19, RoomConfigFormComponent_div_19_Template, 2, 1, "div", 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](20, RoomConfigFormComponent_div_20_Template, 2, 1, "div", 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx.roomConfigFormGroup);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.mode === "join");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.mode === "create");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.roomConfigFormConstants.LABELS.USERNAME);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx.roomConfigFormConstants.LABELS.CAMERA, "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx.roomConfigFormConstants.LABELS.MICROPHONE, "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.mode === "create");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.mode === "create");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.mode === "join");
+    } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroupDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgIf"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControlName"], primeng_inputtext__WEBPACK_IMPORTED_MODULE_8__["InputText"], primeng_inputswitch__WEBPACK_IMPORTED_MODULE_9__["InputSwitch"], primeng_button__WEBPACK_IMPORTED_MODULE_10__["ButtonDirective"], primeng_tooltip__WEBPACK_IMPORTED_MODULE_11__["Tooltip"], primeng_button__WEBPACK_IMPORTED_MODULE_10__["Button"]], styles: [".room-config-form[_ngcontent-%COMP%] {\n  padding: 0 1rem;\n}\n.room-config-form-input-container[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem 0;\n}\n.room-config-form-label[_ngcontent-%COMP%] {\n  padding: 1rem;\n  font-size: 1.25rem;\n}\n.room-config-form-label-icon[_ngcontent-%COMP%] {\n  width: 1rem;\n  height: 1rem;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29yZS9jb21wb25lbnRzL3Jvb20tY29uZmlnLWZvcm0vcm9vbS1jb25maWctZm9ybS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGVBQUE7QUFDRjtBQUNJO0VBQ0UsYUFBQTtFQUNBLDhCQUFBO0VBQ0EsbUJBQUE7RUFDQSxlQUFBO0FBQ047QUFFRTtFQUNFLGFBQUE7RUFDQSxrQkFBQTtBQUFKO0FBQ0k7RUFDRSxXQUFBO0VBQ0EsWUFBQTtBQUNOIiwiZmlsZSI6InNyYy9hcHAvY29yZS9jb21wb25lbnRzL3Jvb20tY29uZmlnLWZvcm0vcm9vbS1jb25maWctZm9ybS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5yb29tLWNvbmZpZy1mb3JtIHtcbiAgcGFkZGluZzogMCAxcmVtO1xuICAmLWlucHV0IHtcbiAgICAmLWNvbnRhaW5lciB7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xuICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgIHBhZGRpbmc6IDFyZW0gMDtcbiAgICB9XG4gIH1cbiAgJi1sYWJlbCB7XG4gICAgcGFkZGluZzogMXJlbTtcbiAgICBmb250LXNpemU6IDEuMjVyZW07XG4gICAgJi1pY29uIHtcbiAgICAgIHdpZHRoOiAxcmVtO1xuICAgICAgaGVpZ2h0OiAxcmVtO1xuICAgIH1cbiAgfVxufVxuIl19 */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](RoomConfigFormComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'room-config-form',
+                templateUrl: './room-config-form.component.html',
+                styleUrls: ['./room-config-form.component.scss'],
+                providers: [primeng_api__WEBPACK_IMPORTED_MODULE_1__["MessageService"]]
+            }]
+    }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] }, { type: _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormBuilder"] }, { type: primeng_api__WEBPACK_IMPORTED_MODULE_1__["MessageService"] }, { type: primeng_dynamicdialog__WEBPACK_IMPORTED_MODULE_6__["DynamicDialogConfig"] }, { type: primeng_dynamicdialog__WEBPACK_IMPORTED_MODULE_6__["DynamicDialogRef"] }]; }, null); })();
+
+
+/***/ }),
+
 /***/ "9APP":
 /*!****************************************************!*\
   !*** ./src/app/core/services/user/user.service.ts ***!
@@ -1147,6 +1364,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var primeng_blockui__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! primeng/blockui */ "0LTx");
 /* harmony import */ var primeng_progressspinner__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! primeng/progressspinner */ "vKg+");
 /* harmony import */ var primeng_divider__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! primeng/divider */ "lUkA");
+/* harmony import */ var primeng_dynamicdialog__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! primeng/dynamicdialog */ "J7/z");
+/* harmony import */ var primeng_tooltip__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! primeng/tooltip */ "xlun");
+
+
 
 
 
@@ -1184,7 +1405,9 @@ SharedModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjec
             primeng_message__WEBPACK_IMPORTED_MODULE_13__["MessageModule"],
             primeng_blockui__WEBPACK_IMPORTED_MODULE_14__["BlockUIModule"],
             primeng_progressspinner__WEBPACK_IMPORTED_MODULE_15__["ProgressSpinnerModule"],
-            primeng_divider__WEBPACK_IMPORTED_MODULE_16__["DividerModule"]
+            primeng_divider__WEBPACK_IMPORTED_MODULE_16__["DividerModule"],
+            primeng_dynamicdialog__WEBPACK_IMPORTED_MODULE_17__["DynamicDialogModule"],
+            primeng_tooltip__WEBPACK_IMPORTED_MODULE_18__["TooltipModule"]
         ], primeng_button__WEBPACK_IMPORTED_MODULE_7__["ButtonModule"],
         primeng_divider__WEBPACK_IMPORTED_MODULE_16__["DividerModule"],
         primeng_inputtext__WEBPACK_IMPORTED_MODULE_8__["InputTextModule"],
@@ -1194,7 +1417,9 @@ SharedModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjec
         primeng_messages__WEBPACK_IMPORTED_MODULE_12__["MessagesModule"],
         primeng_message__WEBPACK_IMPORTED_MODULE_13__["MessageModule"],
         primeng_blockui__WEBPACK_IMPORTED_MODULE_14__["BlockUIModule"],
-        primeng_progressspinner__WEBPACK_IMPORTED_MODULE_15__["ProgressSpinnerModule"]] });
+        primeng_progressspinner__WEBPACK_IMPORTED_MODULE_15__["ProgressSpinnerModule"],
+        primeng_dynamicdialog__WEBPACK_IMPORTED_MODULE_17__["DynamicDialogModule"],
+        primeng_tooltip__WEBPACK_IMPORTED_MODULE_18__["TooltipModule"]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](SharedModule, { imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
         _events_events_module__WEBPACK_IMPORTED_MODULE_2__["EventsModule"],
         _services_services_module__WEBPACK_IMPORTED_MODULE_3__["ServicesModule"],
@@ -1210,7 +1435,9 @@ SharedModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjec
         primeng_message__WEBPACK_IMPORTED_MODULE_13__["MessageModule"],
         primeng_blockui__WEBPACK_IMPORTED_MODULE_14__["BlockUIModule"],
         primeng_progressspinner__WEBPACK_IMPORTED_MODULE_15__["ProgressSpinnerModule"],
-        primeng_divider__WEBPACK_IMPORTED_MODULE_16__["DividerModule"]], exports: [primeng_button__WEBPACK_IMPORTED_MODULE_7__["ButtonModule"],
+        primeng_divider__WEBPACK_IMPORTED_MODULE_16__["DividerModule"],
+        primeng_dynamicdialog__WEBPACK_IMPORTED_MODULE_17__["DynamicDialogModule"],
+        primeng_tooltip__WEBPACK_IMPORTED_MODULE_18__["TooltipModule"]], exports: [primeng_button__WEBPACK_IMPORTED_MODULE_7__["ButtonModule"],
         primeng_divider__WEBPACK_IMPORTED_MODULE_16__["DividerModule"],
         primeng_inputtext__WEBPACK_IMPORTED_MODULE_8__["InputTextModule"],
         primeng_slider__WEBPACK_IMPORTED_MODULE_9__["SliderModule"],
@@ -1219,7 +1446,9 @@ SharedModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjec
         primeng_messages__WEBPACK_IMPORTED_MODULE_12__["MessagesModule"],
         primeng_message__WEBPACK_IMPORTED_MODULE_13__["MessageModule"],
         primeng_blockui__WEBPACK_IMPORTED_MODULE_14__["BlockUIModule"],
-        primeng_progressspinner__WEBPACK_IMPORTED_MODULE_15__["ProgressSpinnerModule"]] }); })();
+        primeng_progressspinner__WEBPACK_IMPORTED_MODULE_15__["ProgressSpinnerModule"],
+        primeng_dynamicdialog__WEBPACK_IMPORTED_MODULE_17__["DynamicDialogModule"],
+        primeng_tooltip__WEBPACK_IMPORTED_MODULE_18__["TooltipModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](SharedModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
         args: [{
@@ -1240,7 +1469,9 @@ SharedModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjec
                     primeng_message__WEBPACK_IMPORTED_MODULE_13__["MessageModule"],
                     primeng_blockui__WEBPACK_IMPORTED_MODULE_14__["BlockUIModule"],
                     primeng_progressspinner__WEBPACK_IMPORTED_MODULE_15__["ProgressSpinnerModule"],
-                    primeng_divider__WEBPACK_IMPORTED_MODULE_16__["DividerModule"]
+                    primeng_divider__WEBPACK_IMPORTED_MODULE_16__["DividerModule"],
+                    primeng_dynamicdialog__WEBPACK_IMPORTED_MODULE_17__["DynamicDialogModule"],
+                    primeng_tooltip__WEBPACK_IMPORTED_MODULE_18__["TooltipModule"]
                 ],
                 exports: [
                     primeng_button__WEBPACK_IMPORTED_MODULE_7__["ButtonModule"],
@@ -1252,8 +1483,10 @@ SharedModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjec
                     primeng_messages__WEBPACK_IMPORTED_MODULE_12__["MessagesModule"],
                     primeng_message__WEBPACK_IMPORTED_MODULE_13__["MessageModule"],
                     primeng_blockui__WEBPACK_IMPORTED_MODULE_14__["BlockUIModule"],
-                    primeng_progressspinner__WEBPACK_IMPORTED_MODULE_15__["ProgressSpinnerModule"]
-                ],
+                    primeng_progressspinner__WEBPACK_IMPORTED_MODULE_15__["ProgressSpinnerModule"],
+                    primeng_dynamicdialog__WEBPACK_IMPORTED_MODULE_17__["DynamicDialogModule"],
+                    primeng_tooltip__WEBPACK_IMPORTED_MODULE_18__["TooltipModule"]
+                ]
             }]
     }], null, null); })();
 
@@ -1881,6 +2114,44 @@ AdminFooterComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
 
 /***/ }),
 
+/***/ "m59G":
+/*!********************************************************************************!*\
+  !*** ./src/app/core/components/room-config-form/room-config-form.constants.ts ***!
+  \********************************************************************************/
+/*! exports provided: RoomConfigFormConstants */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RoomConfigFormConstants", function() { return RoomConfigFormConstants; });
+/**
+ * Constant file for the room configuration form component.
+ */
+class RoomConfigFormConstants {
+}
+/**
+ * Object with all constants related the room configuration
+ */
+RoomConfigFormConstants.LABELS = {
+    CAMERA: 'Camera',
+    CANCEL: 'Cancel',
+    CREATE: ' Create',
+    ID: 'Room ID',
+    JOIN: 'Join',
+    MICROPHONE: 'Microphone',
+    NAME: 'Room name (Optional)',
+    USERNAME: 'Your name (Optional)'
+};
+/**
+ * Object with all constants related the room configuration errors
+ */
+RoomConfigFormConstants.ERRORS = {
+    SERVER: 'There was an error trying to process your request. Please, try again later',
+};
+
+
+/***/ }),
+
 /***/ "nh7x":
 /*!**********************************************!*\
   !*** ./src/app/core/layout/layout.module.ts ***!
@@ -2008,30 +2279,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "ofXK");
 /* harmony import */ var _login_form_login_form_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./login-form/login-form.component */ "/wR0");
-/* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../shared/shared.module */ "PCNd");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
-/* harmony import */ var _user_management_table_user_management_table_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./user-management-table/user-management-table.component */ "HhCs");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
-/* harmony import */ var primeng_table__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! primeng/table */ "rEr+");
-/* harmony import */ var primeng_toast__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! primeng/toast */ "Gxio");
-/* harmony import */ var primeng_calendar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! primeng/calendar */ "eO1q");
-/* harmony import */ var primeng_slider__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! primeng/slider */ "+la4");
-/* harmony import */ var primeng_multiselect__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! primeng/multiselect */ "lVkt");
-/* harmony import */ var primeng_contextmenu__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! primeng/contextmenu */ "yNBN");
-/* harmony import */ var primeng_dialog__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! primeng/dialog */ "/RsI");
-/* harmony import */ var primeng_button__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! primeng/button */ "jIHw");
-/* harmony import */ var primeng_dropdown__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! primeng/dropdown */ "arFO");
-/* harmony import */ var primeng_progressbar__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! primeng/progressbar */ "+DzE");
-/* harmony import */ var primeng_inputtext__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! primeng/inputtext */ "7kUa");
-/* harmony import */ var primeng_fileupload__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! primeng/fileupload */ "NCSE");
-/* harmony import */ var primeng_toolbar__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! primeng/toolbar */ "5EWq");
-/* harmony import */ var primeng_rating__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! primeng/rating */ "Js94");
-/* harmony import */ var primeng_radiobutton__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! primeng/radiobutton */ "LuMj");
-/* harmony import */ var primeng_inputnumber__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! primeng/inputnumber */ "Ks7X");
-/* harmony import */ var primeng_confirmdialog__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! primeng/confirmdialog */ "Nf9I");
-/* harmony import */ var primeng_inputtextarea__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! primeng/inputtextarea */ "zFJ7");
-/* harmony import */ var primeng_inputswitch__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! primeng/inputswitch */ "rLzU");
-/* harmony import */ var primeng_divider__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! primeng/divider */ "lUkA");
+/* harmony import */ var _room_config_form_room_config_form_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./room-config-form/room-config-form.component */ "5Eit");
+/* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../shared/shared.module */ "PCNd");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
+/* harmony import */ var _user_management_table_user_management_table_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./user-management-table/user-management-table.component */ "HhCs");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
+/* harmony import */ var primeng_table__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! primeng/table */ "rEr+");
+/* harmony import */ var primeng_toast__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! primeng/toast */ "Gxio");
+/* harmony import */ var primeng_calendar__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! primeng/calendar */ "eO1q");
+/* harmony import */ var primeng_slider__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! primeng/slider */ "+la4");
+/* harmony import */ var primeng_multiselect__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! primeng/multiselect */ "lVkt");
+/* harmony import */ var primeng_contextmenu__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! primeng/contextmenu */ "yNBN");
+/* harmony import */ var primeng_dialog__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! primeng/dialog */ "/RsI");
+/* harmony import */ var primeng_button__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! primeng/button */ "jIHw");
+/* harmony import */ var primeng_dropdown__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! primeng/dropdown */ "arFO");
+/* harmony import */ var primeng_progressbar__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! primeng/progressbar */ "+DzE");
+/* harmony import */ var primeng_inputtext__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! primeng/inputtext */ "7kUa");
+/* harmony import */ var primeng_fileupload__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! primeng/fileupload */ "NCSE");
+/* harmony import */ var primeng_toolbar__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! primeng/toolbar */ "5EWq");
+/* harmony import */ var primeng_rating__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! primeng/rating */ "Js94");
+/* harmony import */ var primeng_radiobutton__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! primeng/radiobutton */ "LuMj");
+/* harmony import */ var primeng_inputnumber__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! primeng/inputnumber */ "Ks7X");
+/* harmony import */ var primeng_confirmdialog__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! primeng/confirmdialog */ "Nf9I");
+/* harmony import */ var primeng_inputtextarea__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! primeng/inputtextarea */ "zFJ7");
+/* harmony import */ var primeng_inputswitch__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! primeng/inputswitch */ "rLzU");
+/* harmony import */ var primeng_divider__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! primeng/divider */ "lUkA");
+/* harmony import */ var primeng_tooltip__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! primeng/tooltip */ "xlun");
+
+
 
 
 
@@ -2066,91 +2341,94 @@ class ComponentsModule {
 ComponentsModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({ type: ComponentsModule });
 ComponentsModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({ factory: function ComponentsModule_Factory(t) { return new (t || ComponentsModule)(); }, imports: [[
             _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
-            _shared_shared_module__WEBPACK_IMPORTED_MODULE_3__["SharedModule"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
-            primeng_table__WEBPACK_IMPORTED_MODULE_7__["TableModule"],
-            primeng_calendar__WEBPACK_IMPORTED_MODULE_9__["CalendarModule"],
-            primeng_slider__WEBPACK_IMPORTED_MODULE_10__["SliderModule"],
-            primeng_dialog__WEBPACK_IMPORTED_MODULE_13__["DialogModule"],
-            primeng_multiselect__WEBPACK_IMPORTED_MODULE_11__["MultiSelectModule"],
-            primeng_contextmenu__WEBPACK_IMPORTED_MODULE_12__["ContextMenuModule"],
-            primeng_dropdown__WEBPACK_IMPORTED_MODULE_15__["DropdownModule"],
-            primeng_button__WEBPACK_IMPORTED_MODULE_14__["ButtonModule"],
-            primeng_toast__WEBPACK_IMPORTED_MODULE_8__["ToastModule"],
-            primeng_inputtext__WEBPACK_IMPORTED_MODULE_17__["InputTextModule"],
-            primeng_progressbar__WEBPACK_IMPORTED_MODULE_16__["ProgressBarModule"],
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"],
-            primeng_fileupload__WEBPACK_IMPORTED_MODULE_18__["FileUploadModule"],
-            primeng_toolbar__WEBPACK_IMPORTED_MODULE_19__["ToolbarModule"],
-            primeng_rating__WEBPACK_IMPORTED_MODULE_20__["RatingModule"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
-            primeng_radiobutton__WEBPACK_IMPORTED_MODULE_21__["RadioButtonModule"],
-            primeng_inputnumber__WEBPACK_IMPORTED_MODULE_22__["InputNumberModule"],
-            primeng_confirmdialog__WEBPACK_IMPORTED_MODULE_23__["ConfirmDialogModule"],
-            primeng_inputtextarea__WEBPACK_IMPORTED_MODULE_24__["InputTextareaModule"],
-            primeng_inputswitch__WEBPACK_IMPORTED_MODULE_25__["InputSwitchModule"],
-            primeng_divider__WEBPACK_IMPORTED_MODULE_26__["DividerModule"]
+            _shared_shared_module__WEBPACK_IMPORTED_MODULE_4__["SharedModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"],
+            primeng_table__WEBPACK_IMPORTED_MODULE_8__["TableModule"],
+            primeng_calendar__WEBPACK_IMPORTED_MODULE_10__["CalendarModule"],
+            primeng_slider__WEBPACK_IMPORTED_MODULE_11__["SliderModule"],
+            primeng_dialog__WEBPACK_IMPORTED_MODULE_14__["DialogModule"],
+            primeng_multiselect__WEBPACK_IMPORTED_MODULE_12__["MultiSelectModule"],
+            primeng_contextmenu__WEBPACK_IMPORTED_MODULE_13__["ContextMenuModule"],
+            primeng_dropdown__WEBPACK_IMPORTED_MODULE_16__["DropdownModule"],
+            primeng_button__WEBPACK_IMPORTED_MODULE_15__["ButtonModule"],
+            primeng_toast__WEBPACK_IMPORTED_MODULE_9__["ToastModule"],
+            primeng_inputtext__WEBPACK_IMPORTED_MODULE_18__["InputTextModule"],
+            primeng_progressbar__WEBPACK_IMPORTED_MODULE_17__["ProgressBarModule"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClientModule"],
+            primeng_fileupload__WEBPACK_IMPORTED_MODULE_19__["FileUploadModule"],
+            primeng_toolbar__WEBPACK_IMPORTED_MODULE_20__["ToolbarModule"],
+            primeng_rating__WEBPACK_IMPORTED_MODULE_21__["RatingModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"],
+            primeng_radiobutton__WEBPACK_IMPORTED_MODULE_22__["RadioButtonModule"],
+            primeng_inputnumber__WEBPACK_IMPORTED_MODULE_23__["InputNumberModule"],
+            primeng_confirmdialog__WEBPACK_IMPORTED_MODULE_24__["ConfirmDialogModule"],
+            primeng_inputtextarea__WEBPACK_IMPORTED_MODULE_25__["InputTextareaModule"],
+            primeng_inputswitch__WEBPACK_IMPORTED_MODULE_26__["InputSwitchModule"],
+            primeng_divider__WEBPACK_IMPORTED_MODULE_27__["DividerModule"],
+            primeng_tooltip__WEBPACK_IMPORTED_MODULE_28__["TooltipModule"]
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](ComponentsModule, { declarations: [_login_form_login_form_component__WEBPACK_IMPORTED_MODULE_2__["LoginFormComponent"], _user_management_table_user_management_table_component__WEBPACK_IMPORTED_MODULE_5__["UserManagementTableComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
-        _shared_shared_module__WEBPACK_IMPORTED_MODULE_3__["SharedModule"],
-        _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"],
-        _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
-        primeng_table__WEBPACK_IMPORTED_MODULE_7__["TableModule"],
-        primeng_calendar__WEBPACK_IMPORTED_MODULE_9__["CalendarModule"],
-        primeng_slider__WEBPACK_IMPORTED_MODULE_10__["SliderModule"],
-        primeng_dialog__WEBPACK_IMPORTED_MODULE_13__["DialogModule"],
-        primeng_multiselect__WEBPACK_IMPORTED_MODULE_11__["MultiSelectModule"],
-        primeng_contextmenu__WEBPACK_IMPORTED_MODULE_12__["ContextMenuModule"],
-        primeng_dropdown__WEBPACK_IMPORTED_MODULE_15__["DropdownModule"],
-        primeng_button__WEBPACK_IMPORTED_MODULE_14__["ButtonModule"],
-        primeng_toast__WEBPACK_IMPORTED_MODULE_8__["ToastModule"],
-        primeng_inputtext__WEBPACK_IMPORTED_MODULE_17__["InputTextModule"],
-        primeng_progressbar__WEBPACK_IMPORTED_MODULE_16__["ProgressBarModule"],
-        _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"],
-        primeng_fileupload__WEBPACK_IMPORTED_MODULE_18__["FileUploadModule"],
-        primeng_toolbar__WEBPACK_IMPORTED_MODULE_19__["ToolbarModule"],
-        primeng_rating__WEBPACK_IMPORTED_MODULE_20__["RatingModule"],
-        _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
-        primeng_radiobutton__WEBPACK_IMPORTED_MODULE_21__["RadioButtonModule"],
-        primeng_inputnumber__WEBPACK_IMPORTED_MODULE_22__["InputNumberModule"],
-        primeng_confirmdialog__WEBPACK_IMPORTED_MODULE_23__["ConfirmDialogModule"],
-        primeng_inputtextarea__WEBPACK_IMPORTED_MODULE_24__["InputTextareaModule"],
-        primeng_inputswitch__WEBPACK_IMPORTED_MODULE_25__["InputSwitchModule"],
-        primeng_divider__WEBPACK_IMPORTED_MODULE_26__["DividerModule"]], exports: [_login_form_login_form_component__WEBPACK_IMPORTED_MODULE_2__["LoginFormComponent"], _user_management_table_user_management_table_component__WEBPACK_IMPORTED_MODULE_5__["UserManagementTableComponent"]] }); })();
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](ComponentsModule, { declarations: [_login_form_login_form_component__WEBPACK_IMPORTED_MODULE_2__["LoginFormComponent"], _room_config_form_room_config_form_component__WEBPACK_IMPORTED_MODULE_3__["RoomConfigFormComponent"], _user_management_table_user_management_table_component__WEBPACK_IMPORTED_MODULE_6__["UserManagementTableComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+        _shared_shared_module__WEBPACK_IMPORTED_MODULE_4__["SharedModule"],
+        _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"],
+        _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"],
+        primeng_table__WEBPACK_IMPORTED_MODULE_8__["TableModule"],
+        primeng_calendar__WEBPACK_IMPORTED_MODULE_10__["CalendarModule"],
+        primeng_slider__WEBPACK_IMPORTED_MODULE_11__["SliderModule"],
+        primeng_dialog__WEBPACK_IMPORTED_MODULE_14__["DialogModule"],
+        primeng_multiselect__WEBPACK_IMPORTED_MODULE_12__["MultiSelectModule"],
+        primeng_contextmenu__WEBPACK_IMPORTED_MODULE_13__["ContextMenuModule"],
+        primeng_dropdown__WEBPACK_IMPORTED_MODULE_16__["DropdownModule"],
+        primeng_button__WEBPACK_IMPORTED_MODULE_15__["ButtonModule"],
+        primeng_toast__WEBPACK_IMPORTED_MODULE_9__["ToastModule"],
+        primeng_inputtext__WEBPACK_IMPORTED_MODULE_18__["InputTextModule"],
+        primeng_progressbar__WEBPACK_IMPORTED_MODULE_17__["ProgressBarModule"],
+        _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClientModule"],
+        primeng_fileupload__WEBPACK_IMPORTED_MODULE_19__["FileUploadModule"],
+        primeng_toolbar__WEBPACK_IMPORTED_MODULE_20__["ToolbarModule"],
+        primeng_rating__WEBPACK_IMPORTED_MODULE_21__["RatingModule"],
+        _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"],
+        primeng_radiobutton__WEBPACK_IMPORTED_MODULE_22__["RadioButtonModule"],
+        primeng_inputnumber__WEBPACK_IMPORTED_MODULE_23__["InputNumberModule"],
+        primeng_confirmdialog__WEBPACK_IMPORTED_MODULE_24__["ConfirmDialogModule"],
+        primeng_inputtextarea__WEBPACK_IMPORTED_MODULE_25__["InputTextareaModule"],
+        primeng_inputswitch__WEBPACK_IMPORTED_MODULE_26__["InputSwitchModule"],
+        primeng_divider__WEBPACK_IMPORTED_MODULE_27__["DividerModule"],
+        primeng_tooltip__WEBPACK_IMPORTED_MODULE_28__["TooltipModule"]], exports: [_login_form_login_form_component__WEBPACK_IMPORTED_MODULE_2__["LoginFormComponent"], _room_config_form_room_config_form_component__WEBPACK_IMPORTED_MODULE_3__["RoomConfigFormComponent"], _user_management_table_user_management_table_component__WEBPACK_IMPORTED_MODULE_6__["UserManagementTableComponent"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ComponentsModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
         args: [{
-                declarations: [_login_form_login_form_component__WEBPACK_IMPORTED_MODULE_2__["LoginFormComponent"], _user_management_table_user_management_table_component__WEBPACK_IMPORTED_MODULE_5__["UserManagementTableComponent"]],
+                declarations: [_login_form_login_form_component__WEBPACK_IMPORTED_MODULE_2__["LoginFormComponent"], _room_config_form_room_config_form_component__WEBPACK_IMPORTED_MODULE_3__["RoomConfigFormComponent"], _user_management_table_user_management_table_component__WEBPACK_IMPORTED_MODULE_6__["UserManagementTableComponent"]],
                 imports: [
                     _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
-                    _shared_shared_module__WEBPACK_IMPORTED_MODULE_3__["SharedModule"],
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"],
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
-                    primeng_table__WEBPACK_IMPORTED_MODULE_7__["TableModule"],
-                    primeng_calendar__WEBPACK_IMPORTED_MODULE_9__["CalendarModule"],
-                    primeng_slider__WEBPACK_IMPORTED_MODULE_10__["SliderModule"],
-                    primeng_dialog__WEBPACK_IMPORTED_MODULE_13__["DialogModule"],
-                    primeng_multiselect__WEBPACK_IMPORTED_MODULE_11__["MultiSelectModule"],
-                    primeng_contextmenu__WEBPACK_IMPORTED_MODULE_12__["ContextMenuModule"],
-                    primeng_dropdown__WEBPACK_IMPORTED_MODULE_15__["DropdownModule"],
-                    primeng_button__WEBPACK_IMPORTED_MODULE_14__["ButtonModule"],
-                    primeng_toast__WEBPACK_IMPORTED_MODULE_8__["ToastModule"],
-                    primeng_inputtext__WEBPACK_IMPORTED_MODULE_17__["InputTextModule"],
-                    primeng_progressbar__WEBPACK_IMPORTED_MODULE_16__["ProgressBarModule"],
-                    _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"],
-                    primeng_fileupload__WEBPACK_IMPORTED_MODULE_18__["FileUploadModule"],
-                    primeng_toolbar__WEBPACK_IMPORTED_MODULE_19__["ToolbarModule"],
-                    primeng_rating__WEBPACK_IMPORTED_MODULE_20__["RatingModule"],
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
-                    primeng_radiobutton__WEBPACK_IMPORTED_MODULE_21__["RadioButtonModule"],
-                    primeng_inputnumber__WEBPACK_IMPORTED_MODULE_22__["InputNumberModule"],
-                    primeng_confirmdialog__WEBPACK_IMPORTED_MODULE_23__["ConfirmDialogModule"],
-                    primeng_inputtextarea__WEBPACK_IMPORTED_MODULE_24__["InputTextareaModule"],
-                    primeng_inputswitch__WEBPACK_IMPORTED_MODULE_25__["InputSwitchModule"],
-                    primeng_divider__WEBPACK_IMPORTED_MODULE_26__["DividerModule"]
+                    _shared_shared_module__WEBPACK_IMPORTED_MODULE_4__["SharedModule"],
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"],
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"],
+                    primeng_table__WEBPACK_IMPORTED_MODULE_8__["TableModule"],
+                    primeng_calendar__WEBPACK_IMPORTED_MODULE_10__["CalendarModule"],
+                    primeng_slider__WEBPACK_IMPORTED_MODULE_11__["SliderModule"],
+                    primeng_dialog__WEBPACK_IMPORTED_MODULE_14__["DialogModule"],
+                    primeng_multiselect__WEBPACK_IMPORTED_MODULE_12__["MultiSelectModule"],
+                    primeng_contextmenu__WEBPACK_IMPORTED_MODULE_13__["ContextMenuModule"],
+                    primeng_dropdown__WEBPACK_IMPORTED_MODULE_16__["DropdownModule"],
+                    primeng_button__WEBPACK_IMPORTED_MODULE_15__["ButtonModule"],
+                    primeng_toast__WEBPACK_IMPORTED_MODULE_9__["ToastModule"],
+                    primeng_inputtext__WEBPACK_IMPORTED_MODULE_18__["InputTextModule"],
+                    primeng_progressbar__WEBPACK_IMPORTED_MODULE_17__["ProgressBarModule"],
+                    _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClientModule"],
+                    primeng_fileupload__WEBPACK_IMPORTED_MODULE_19__["FileUploadModule"],
+                    primeng_toolbar__WEBPACK_IMPORTED_MODULE_20__["ToolbarModule"],
+                    primeng_rating__WEBPACK_IMPORTED_MODULE_21__["RatingModule"],
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"],
+                    primeng_radiobutton__WEBPACK_IMPORTED_MODULE_22__["RadioButtonModule"],
+                    primeng_inputnumber__WEBPACK_IMPORTED_MODULE_23__["InputNumberModule"],
+                    primeng_confirmdialog__WEBPACK_IMPORTED_MODULE_24__["ConfirmDialogModule"],
+                    primeng_inputtextarea__WEBPACK_IMPORTED_MODULE_25__["InputTextareaModule"],
+                    primeng_inputswitch__WEBPACK_IMPORTED_MODULE_26__["InputSwitchModule"],
+                    primeng_divider__WEBPACK_IMPORTED_MODULE_27__["DividerModule"],
+                    primeng_tooltip__WEBPACK_IMPORTED_MODULE_28__["TooltipModule"]
                 ],
-                exports: [_login_form_login_form_component__WEBPACK_IMPORTED_MODULE_2__["LoginFormComponent"], _user_management_table_user_management_table_component__WEBPACK_IMPORTED_MODULE_5__["UserManagementTableComponent"]]
+                exports: [_login_form_login_form_component__WEBPACK_IMPORTED_MODULE_2__["LoginFormComponent"], _room_config_form_room_config_form_component__WEBPACK_IMPORTED_MODULE_3__["RoomConfigFormComponent"], _user_management_table_user_management_table_component__WEBPACK_IMPORTED_MODULE_6__["UserManagementTableComponent"]]
             }]
     }], null, null); })();
 
