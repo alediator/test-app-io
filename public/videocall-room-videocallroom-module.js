@@ -1312,6 +1312,9 @@ class VideoCallRoomComponent {
         if (videos <= 2) {
             cols = 1;
         }
+        else if (videos === 3) {
+            cols = 2;
+        }
         else if (videos === 4) {
             cols = 3;
         }
