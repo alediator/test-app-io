@@ -21,7 +21,7 @@ app.head('/_ping', function(req, res){
     res.sendStatus(204);
 });
 
-
+// TODO: use REDIS for storing this stuff
 let rooms = {};
 let users = {};
 
@@ -36,6 +36,17 @@ io.on('connection', socket => {
 
         userName = metadata && metadata.userName ? metadata.userName: null;
         roomName = metadata && metadata.roomName ? metadata.roomName: null;
+
+        if (rooms[roomId]) {
+            roomName = rooms[roomId].roomName;
+            rooms[roomId].users.push(userId);
+        } else {
+            rooms[roomId] = {
+                ownerId: userId,
+                roomName: roomName,
+                users: [userId]
+            };
+        }
 
 
         console.log(`User (${userId}) "${userName}" joined "${roomName}" (${roomId})`);
@@ -57,9 +68,19 @@ io.on('connection', socket => {
         userName = metadata && metadata.userName ? metadata.userName: null;
         roomName = metadata && metadata.roomName ? metadata.roomName: null;
 
+        if (rooms[roomId]) {
+            roomName = rooms[roomId].roomName;
+            rooms[roomId].users = rooms[roomId].users.filter((id) => id != userId);
+        }
+
 
         socket.to(roomId).broadcast.emit('user-disconnected', userId, { roomName, userName });
         console.log(`User (${userId}) "${userName}" left "${roomName}" (${roomId})`);
+
+        console.log(rooms[roomId]);
+        if(rooms[roomId] && rooms[roomId].users.lenght === 0){
+            delete rooms.roomId;
+        }
         // var clients = io.sockets.adapter.rooms[roomId].sockets;
         // console.log('Users left', clients);
         // socket.disconnect();
