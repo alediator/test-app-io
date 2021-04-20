@@ -1148,7 +1148,7 @@ class VideoCallRoomComponent {
         console.log(`Initialize Peer with id ${this.currentUserId}`);
         const roomConfig = JSON.parse(localStorage.getItem('roomConfig'));
         // Reading local storage.
-        this.roomName = roomConfig.name;
+        this.roomName = 'Meeting room';
         this.currentUserName = roomConfig.username;
         this.micro = roomConfig.microphone;
         this.camera = roomConfig.camera;
@@ -1211,7 +1211,7 @@ class VideoCallRoomComponent {
                 });
                 this.socket.on('user-connected', (userId, { roomName, userName }) => {
                     console.log('Receiving user-connected event', `Calling ${userId} for ${roomName}`);
-                    this.roomName = roomName;
+                    this.roomName = 'Meeting room';
                     // Let some time for new peers to be able to answer
                     setTimeout(() => {
                         const call = this.myPeer.call(userId, stream, {
@@ -1241,7 +1241,7 @@ class VideoCallRoomComponent {
         console.log('Joining ', this.currentUserId, ' to ', roomId);
         this.socket.emit('join-room', roomId, this.currentUserId, {
             userName: this.currentUserName,
-            roomName: this.roomName
+            roomName: 'Meeting room'
         });
     }
     /**
@@ -1253,7 +1253,7 @@ class VideoCallRoomComponent {
         });
         this.socket.emit('leave-room', roomId, this.currentUserId, {
             userName: this.currentUserName,
-            roomName: this.roomName
+            roomName: 'Meeting room'
         });
         this.myPeer.disconnect();
     }
