@@ -1235,6 +1235,9 @@ class VideoCallRoomComponent {
     }
     endCall() {
         this.leaveRoom(this.roomId);
+        this.myStream.getTracks().forEach((track) => {
+            track.stop();
+        });
         this.router.navigate([`/video-call`]);
     }
     getVideoSize(videos) {
