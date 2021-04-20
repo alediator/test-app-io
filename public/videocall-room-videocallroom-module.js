@@ -1061,6 +1061,7 @@ class VideoCallRoomComponent {
         this.route = route;
         this.socket = socket;
         this.router = router;
+        this.streamInitialized = false;
         // Video components
         this.videos = [];
         this.videoSize = 12;
@@ -1111,53 +1112,60 @@ class VideoCallRoomComponent {
         });
     }
     initializeMedia() {
-        navigator.mediaDevices.getUserMedia({
-            audio: this.micro,
-            video: this.camera,
-        })
-            .catch((err) => {
-            console.error('[Error] Not able to retrieve user media:', err);
-            return null;
-        })
-            .then((stream) => {
-            if (stream) {
-                this.myStream = stream;
-                this.addMyVideo(stream);
-            }
-            // TODO: move all this code to another function because it is not related with the media itself.
-            this.myPeer.on('call', (call) => {
-                console.log('receiving call...', call);
-                call.answer(stream);
-                call.on('stream', (otherUserVideoStream) => {
-                    console.log('receiving other stream', otherUserVideoStream);
-                    this.addOtherUserVideo(call.metadata.userId, call.metadata.userName, otherUserVideoStream);
-                });
-                call.on('error', (err) => {
-                    console.error(err);
-                });
-            });
-            this.socket.on('user-connected', (userId, { roomName, userName }) => {
-                console.log('Receiving user-connected event', `Calling ${userId} for ${roomName}`);
-                this.roomName = roomName;
-                // Let some time for new peers to be able to answer
-                setTimeout(() => {
-                    const call = this.myPeer.call(userId, stream, {
-                        metadata: {
-                            userId: this.currentUserId,
-                            userName: this.currentUserName
-                        },
-                    });
+        if (this.streamInitialized) {
+            return;
+        }
+        if (this.micro || this.camera) {
+            this.streamInitialized = true;
+            navigator.mediaDevices.getUserMedia({
+                audio: this.micro,
+                video: this.camera,
+            })
+                .catch((err) => {
+                console.error('[Error] Not able to retrieve user media:', err);
+                return null;
+            })
+                .then((stream) => {
+                if (stream) {
+                    this.myStream = stream;
+                    this.addMyVideo(stream);
+                }
+                // TODO: move all this code to another function because it is not related with the media itself.
+                this.myPeer.on('call', (call) => {
+                    console.log('receiving call...', call);
+                    call.answer(stream);
                     call.on('stream', (otherUserVideoStream) => {
-                        console.log('receiving other user stream after his connection');
-                        this.addOtherUserVideo(userId, userName, otherUserVideoStream);
+                        console.log('receiving other stream', otherUserVideoStream);
+                        this.addOtherUserVideo(call.metadata.userId, call.metadata.userName, otherUserVideoStream);
                     });
-                    call.on('close', () => {
-                        this.videos = this.videos.filter((video) => video.userId !== userId);
-                        this.videoSize = this.getVideoSize(this.videos.length);
+                    call.on('error', (err) => {
+                        console.error(err);
                     });
-                }, 1000);
+                });
+                this.socket.on('user-connected', (userId, { roomName, userName }) => {
+                    console.log('Receiving user-connected event', `Calling ${userId} for ${roomName}`);
+                    this.roomName = roomName;
+                    // Let some time for new peers to be able to answer
+                    setTimeout(() => {
+                        const call = this.myPeer.call(userId, stream, {
+                            metadata: {
+                                userId: this.currentUserId,
+                                userName: this.currentUserName
+                            },
+                        });
+                        call.on('stream', (otherUserVideoStream) => {
+                            console.log('receiving other user stream after his connection');
+                            this.addOtherUserVideo(userId, userName, otherUserVideoStream);
+                        });
+                        call.on('close', () => {
+                            this.videos = this.videos.filter((video) => video.userId !== userId);
+                            this.videoSize = this.getVideoSize(this.videos.length);
+                        });
+                    }, 1000);
+                });
             });
-        });
+        }
+        // TODO: what happens if no media!?
     }
     /**
      * Current peer joins the selected room.
@@ -1217,11 +1225,13 @@ class VideoCallRoomComponent {
         console.log('show/hidde cam');
         this.camera = !this.camera;
         this.myStream.getVideoTracks()[0].enabled = this.camera;
+        this.initializeMedia();
     }
     muteMicro() {
         console.log('mute/unmute micro');
         this.micro = !this.micro;
         this.myStream.getAudioTracks()[0].enabled = this.micro;
+        this.initializeMedia();
     }
     endCall() {
         this.leaveRoom(this.roomId);
