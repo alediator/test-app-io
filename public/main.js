@@ -610,15 +610,15 @@ class RoomConfigFormComponent {
             roomId: this.roomConfigFormGroup.value.roomId,
             name: storedConfig.name,
             username: this.roomConfigFormGroup.value.username,
-            micro: this.roomConfigFormGroup.value.microphone,
+            microphone: this.roomConfigFormGroup.value.microphone,
             camera: this.roomConfigFormGroup.value.camera,
         }));
-        this.router.navigate([`/video-call/${this.roomConfigFormGroup.value.roomId}`]);
         this.ref.close();
+        this.router.navigate([`/video-call/${this.roomConfigFormGroup.value.roomId}`]);
     }
 }
 RoomConfigFormComponent.ɵfac = function RoomConfigFormComponent_Factory(t) { return new (t || RoomConfigFormComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](primeng_api__WEBPACK_IMPORTED_MODULE_1__["MessageService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](primeng_dynamicdialog__WEBPACK_IMPORTED_MODULE_6__["DynamicDialogConfig"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](primeng_dynamicdialog__WEBPACK_IMPORTED_MODULE_6__["DynamicDialogRef"])); };
-RoomConfigFormComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: RoomConfigFormComponent, selectors: [["room-config-form"]], features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([primeng_api__WEBPACK_IMPORTED_MODULE_1__["MessageService"]])], decls: 21, vars: 9, consts: [["id", "room-config-form", "novalidate", "", 1, "room-config-form", 3, "formGroup", "ngSubmit"], ["roomConfigForm", "ngForm"], [1, "p-col-12"], ["class", "p-col-12 room-config-form-input-container", 4, "ngIf"], [1, "p-col-12", "room-config-form-input-container"], ["for", "username", 1, "room-config-form-label"], ["formControlName", "username", "id", "room-username", "pInputText", "", "type", "text", 1, "input-padding"], ["for", "camera", 1, "room-config-form-label"], ["src", "assets/img/video-solid.svg", 1, "room-config-form-label-icon"], ["formControlName", "camera"], ["for", "microphone", 1, "room-config-form-label"], ["src", "assets/img/microphone-solid.svg", 1, "room-config-form-label-icon"], ["formControlName", "microphone"], ["class", "p-offset-10", 4, "ngIf"], ["for", "room-id", 1, "room-config-form-label"], ["formControlName", "roomId", "id", "room-id", "pInputText", "", "type", "text", 1, "input-padding"], ["for", "name", 1, "room-config-form-label"], ["formControlName", "name", "id", "room-name", "pInputText", "", "type", "text", 1, "input-padding"], ["pButton", "", "pRipple", "", "type", "button", "icon", "pi pi-copy", "pTooltip", "Copied!", "tooltipPosition", "top", "tooltipEvent", "focus", 1, "p-button-rounded", "p-button-outlined", "copy-button", 3, "click"], [1, "p-offset-10"], ["styleClass", "room-config-button", "type", "submit", 1, "p-col-2", 3, "label"]], template: function RoomConfigFormComponent_Template(rf, ctx) { if (rf & 1) {
+RoomConfigFormComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: RoomConfigFormComponent, selectors: [["room-config-form"]], features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([primeng_api__WEBPACK_IMPORTED_MODULE_1__["MessageService"]])], decls: 21, vars: 9, consts: [["id", "room-config-form", "novalidate", "", 1, "room-config-form", 3, "formGroup", "ngSubmit"], ["roomConfigForm", "ngForm"], [1, "p-col-12"], ["class", "p-col-12 room-config-form-input-container", 4, "ngIf"], [1, "p-col-12", "room-config-form-input-container"], ["for", "username", 1, "room-config-form-label"], ["formControlName", "username", "id", "room-username", "pInputText", "", "type", "text", 1, "input-padding"], ["for", "camera", 1, "room-config-form-label"], ["src", "assets/img/video-solid.svg", 1, "room-config-form-label-icon"], ["formControlName", "camera"], ["for", "microphone", 1, "room-config-form-label"], ["src", "assets/img/microphone-solid.svg", 1, "room-config-form-label-icon"], ["formControlName", "microphone"], ["class", "p-offset-10", 4, "ngIf"], ["for", "room-id", 1, "room-config-form-label"], ["formControlName", "roomId", "id", "room-id", "pInputText", "", "type", "text", 1, "input-padding"], ["for", "name", 1, "room-config-form-label"], ["formControlName", "name", "id", "room-name", "pInputText", "", "type", "text", 1, "input-padding"], ["pButton", "", "pRipple", "", "type", "button", "icon", "pi pi-copy", "pTooltip", "Copied!", "tooltipPosition", "top", "tooltipEvent", "focus", 1, "p-button-rounded", "p-button-outlined", "copy-button", 3, "click"], [1, "p-offset-10"], ["type", "submit", 1, "p-col-2", 3, "label"]], template: function RoomConfigFormComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "form", 0, 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngSubmit", function RoomConfigFormComponent_Template_form_ngSubmit_0_listener() { return ctx.mode === "create" ? ctx.createRoom() : ctx.joinRoom(); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
@@ -2634,15 +2634,15 @@ class AdminSideMenuComponent {
                     this.clearOverride();
                 },
             },
-            {
-                label: 'User Management',
-                icon: 'pi pi-users',
-                routerLink: '/user-management',
-                title: 'User Management',
-                command: () => {
-                    this.clearOverride();
-                },
-            },
+            /*{
+              label: 'User Management',
+              icon: 'pi pi-users',
+              routerLink: '/user-management',
+              title: 'User Management',
+              command: () => {
+                this.clearOverride();
+              },
+            },*/
             {
                 label: 'Video Call',
                 icon: 'pi pi-video',

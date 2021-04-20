@@ -86,7 +86,7 @@ class VideoCallComponent {
                 roomId: this.code,
                 name: storedConfig.name,
                 username: this.joincallFormGroup.value.username,
-                micro: this.joincallFormGroup.value.microphone,
+                microphone: this.joincallFormGroup.value.microphone,
                 camera: this.joincallFormGroup.value.camera,
             }));
             console.log(this.joincallFormGroup.value);
