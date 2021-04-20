@@ -1177,6 +1177,7 @@ class VideoCallRoomComponent {
             userName: this.currentUserName,
             roomName: this.roomName
         });
+        this.myPeer.disconnect();
     }
     /**
      * Another user left a room.
