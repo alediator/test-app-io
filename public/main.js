@@ -608,7 +608,7 @@ class RoomConfigFormComponent {
         const storedConfig = JSON.parse(localStorage.getItem('roomConfig'));
         localStorage.setItem('roomConfig', JSON.stringify({
             roomId: this.roomConfigFormGroup.value.roomId,
-            name: storedConfig.name,
+            name: storedConfig && storedConfig.name ? storedConfig.name : 'Meeting room',
             username: this.roomConfigFormGroup.value.username,
             microphone: this.roomConfigFormGroup.value.microphone,
             camera: this.roomConfigFormGroup.value.camera,
