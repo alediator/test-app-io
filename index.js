@@ -81,9 +81,6 @@ io.on('connection', socket => {
         if(rooms[roomId] && rooms[roomId].users.lenght === 0){
             delete rooms.roomId;
         }
-        // var clients = io.sockets.adapter.rooms[roomId].sockets;
-        // console.log('Users left', clients);
-        // socket.disconnect();
     })
 
     socket.on("disconnect", (reason) => {
