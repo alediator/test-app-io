@@ -97,44 +97,46 @@ class VideoCallComponent {
     }
 }
 VideoCallComponent.ɵfac = function VideoCallComponent_Factory(t) { return new (t || VideoCallComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](primeng_dynamicdialog__WEBPACK_IMPORTED_MODULE_3__["DialogService"])); };
-VideoCallComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: VideoCallComponent, selectors: [["back-office-videocall"]], features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([primeng_dynamicdialog__WEBPACK_IMPORTED_MODULE_3__["DialogService"]])], decls: 20, vars: 0, consts: [[1, "section-header"], ["styleClass", "p-card-shadow videocall-card", "id", "start"], [1, "p-grid"], [1, "p-col-5", "p-d-flex", "p-ai-center", "p-jc-center"], [1, "videocall-card-button-container"], [1, "pi", "pi-video", "videocall-card-icon"], ["styleClass", "submitButton", "label", "Create room", "type", "submit", "id", "start-button", 3, "click"], [1, "p-col-2"], ["layout", "vertical"], [1, "pi", "pi-users", "videocall-card-icon"], ["styleClass", "submitButton", "label", "Join room", "type", "submit", "id", "start-button", 3, "click"]], template: function VideoCallComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h1", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Videochat tool");
+VideoCallComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: VideoCallComponent, selectors: [["back-office-videocall"]], features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([primeng_dynamicdialog__WEBPACK_IMPORTED_MODULE_3__["DialogService"]])], decls: 21, vars: 0, consts: [[1, "container"], [1, "section-header"], ["styleClass", "p-card-shadow videocall-card", "id", "start"], [1, "p-grid"], [1, "p-col-5", "p-d-flex", "p-ai-center", "p-jc-center"], [1, "videocall-card-button-container"], [1, "pi", "pi-video", "videocall-card-icon"], ["styleClass", "submitButton", "label", "Create room", "type", "submit", "id", "start-button", 3, "click"], [1, "p-col-2"], ["layout", "vertical"], [1, "pi", "pi-users", "videocall-card-icon"], ["styleClass", "submitButton", "label", "Join room", "type", "submit", "id", "start-button", 3, "click"]], template: function VideoCallComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h1", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Videochat tool");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "This is the Aareon video chat tool!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "This is the Aareon video chat tool!");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "You can use our video chat tool within the portal and you can contact your colleagues and field workers quickly. Try it!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "You can use our video chat tool within the portal and you can contact your colleagues and field workers quickly. Try it!");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "p-card", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "p-card", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](10, "i", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "p-button", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function VideoCallComponent_Template_p_button_click_11_listener() { return ctx.showRoomConfiguration("create"); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](11, "i", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "p-button", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function VideoCallComponent_Template_p_button_click_12_listener() { return ctx.showRoomConfiguration("create"); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "p-divider", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "b");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "OR");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "p-divider", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "b");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "OR");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "div", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](18, "i", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "p-button", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function VideoCallComponent_Template_p_button_click_19_listener() { return ctx.showRoomConfiguration("join"); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](19, "i", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "p-button", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function VideoCallComponent_Template_p_button_click_20_listener() { return ctx.showRoomConfiguration("join"); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } }, directives: [primeng_card__WEBPACK_IMPORTED_MODULE_6__["Card"], primeng_button__WEBPACK_IMPORTED_MODULE_7__["Button"], primeng_divider__WEBPACK_IMPORTED_MODULE_8__["Divider"]], styles: [".videocall-card-button-container[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.videocall-card-icon[_ngcontent-%COMP%] {\n  font-size: 60px;\n  padding: 10px;\n}\n[_nghost-%COMP%]     .submitButton {\n  background-color: #005B70;\n}\n[_nghost-%COMP%]     .submitButton:hover, [_nghost-%COMP%]     .submitButton:focus {\n  background-color: rgba(0, 91, 112, 0.92);\n}\n[_nghost-%COMP%]     .videocall-card a, [_nghost-%COMP%]     .videocall-card a:visited {\n  text-decoration: none;\n  color: #000000;\n  text-underline: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvdmlkZW9jYWxsL3ZpZGVvY2FsbC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFSTtFQUNFLGFBQUE7RUFDQSxzQkFBQTtFQUNBLG1CQUFBO0FBRE47QUFHSTtFQUNFLGVBQUE7RUFDQSxhQUFBO0FBRE47QUFPRTtFQUNFLHlCQUFBO0FBSko7QUFTRTs7RUFFRSx3Q0FBQTtBQU5KO0FBV0U7O0VBRUUscUJBQUE7RUFDQSxjQUFBO0VBQ0Esb0JBQUE7QUFSSiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3ZpZGVvY2FsbC92aWRlb2NhbGwuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudmlkZW9jYWxsIHtcbiAgJi1jYXJkIHtcbiAgICAmLWJ1dHRvbi1jb250YWluZXIge1xuICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgIH1cbiAgICAmLWljb24ge1xuICAgICAgZm9udC1zaXplOiA2MHB4O1xuICAgICAgcGFkZGluZzogMTBweDtcbiAgICB9XG4gIH1cbn1cblxuOmhvc3Qge1xuICA6Om5nLWRlZXAgLnN1Ym1pdEJ1dHRvbiB7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzAwNUI3MDtcbiAgfVxufVxuXG46aG9zdCB7XG4gIDo6bmctZGVlcCAuc3VibWl0QnV0dG9uOmhvdmVyLFxuICA6Om5nLWRlZXAgLnN1Ym1pdEJ1dHRvbjpmb2N1cyB7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgwLCA5MSwgMTEyLCAwLjkyKTtcbiAgfVxufVxuXG46aG9zdCB7XG4gIDo6bmctZGVlcCAudmlkZW9jYWxsLWNhcmQgYSxcbiAgOjpuZy1kZWVwIC52aWRlb2NhbGwtY2FyZCBhOnZpc2l0ZWQge1xuICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgICBjb2xvcjogIzAwMDAwMDtcbiAgICB0ZXh0LXVuZGVybGluZTogbm9uZTtcbiAgfVxuICA6Om5nLWRlZXAgLmxvZ2luLWJ1dHRvbiB7fVxufVxuIl19 */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } }, directives: [primeng_card__WEBPACK_IMPORTED_MODULE_6__["Card"], primeng_button__WEBPACK_IMPORTED_MODULE_7__["Button"], primeng_divider__WEBPACK_IMPORTED_MODULE_8__["Divider"]], styles: [".container[_ngcontent-%COMP%] {\n  padding: 20px;\n}\n\n.videocall-card-button-container[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n\n.videocall-card-icon[_ngcontent-%COMP%] {\n  font-size: 60px;\n  padding: 10px;\n}\n\n[_nghost-%COMP%]     .submitButton {\n  background-color: #005B70;\n}\n\n[_nghost-%COMP%]     .submitButton:hover, [_nghost-%COMP%]     .submitButton:focus {\n  background-color: rgba(0, 91, 112, 0.92);\n}\n\n[_nghost-%COMP%]     .videocall-card a, [_nghost-%COMP%]     .videocall-card a:visited {\n  text-decoration: none;\n  color: #000000;\n  text-underline: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvdmlkZW9jYWxsL3ZpZGVvY2FsbC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGFBQUE7QUFDRjs7QUFHSTtFQUNFLGFBQUE7RUFDQSxzQkFBQTtFQUNBLG1CQUFBO0FBQU47O0FBRUk7RUFDRSxlQUFBO0VBQ0EsYUFBQTtBQUFOOztBQU1FO0VBQ0UseUJBQUE7QUFISjs7QUFRRTs7RUFFRSx3Q0FBQTtBQUxKOztBQVVFOztFQUVFLHFCQUFBO0VBQ0EsY0FBQTtFQUNBLG9CQUFBO0FBUEoiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy92aWRlb2NhbGwvdmlkZW9jYWxsLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvbnRhaW5lcntcbiAgcGFkZGluZzogMjBweDtcbn1cbi52aWRlb2NhbGwge1xuICAmLWNhcmQge1xuICAgICYtYnV0dG9uLWNvbnRhaW5lciB7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgfVxuICAgICYtaWNvbiB7XG4gICAgICBmb250LXNpemU6IDYwcHg7XG4gICAgICBwYWRkaW5nOiAxMHB4O1xuICAgIH1cbiAgfVxufVxuXG46aG9zdCB7XG4gIDo6bmctZGVlcCAuc3VibWl0QnV0dG9uIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDA1QjcwO1xuICB9XG59XG5cbjpob3N0IHtcbiAgOjpuZy1kZWVwIC5zdWJtaXRCdXR0b246aG92ZXIsXG4gIDo6bmctZGVlcCAuc3VibWl0QnV0dG9uOmZvY3VzIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsIDkxLCAxMTIsIDAuOTIpO1xuICB9XG59XG5cbjpob3N0IHtcbiAgOjpuZy1kZWVwIC52aWRlb2NhbGwtY2FyZCBhLFxuICA6Om5nLWRlZXAgLnZpZGVvY2FsbC1jYXJkIGE6dmlzaXRlZCB7XG4gICAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xuICAgIGNvbG9yOiAjMDAwMDAwO1xuICAgIHRleHQtdW5kZXJsaW5lOiBub25lO1xuICB9XG4gIDo6bmctZGVlcCAubG9naW4tYnV0dG9uIHt9XG59XG4iXX0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](VideoCallComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{

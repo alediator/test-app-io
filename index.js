@@ -57,6 +57,8 @@ io.on('connection', socket => {
             socket.to(roomId).broadcast.emit('user-disconnected', userId, { roomName, userName });
             console.log(`User (${userId}) "${userName}" left "${roomName}" (${roomId}) (disconnected)`);
         })
+
+        console.log('Current rooms: ', rooms);
     });
 
     socket.on('leave-room', (roomId, userId, metadata) => {
@@ -73,14 +75,14 @@ io.on('connection', socket => {
             rooms[roomId].users = rooms[roomId].users.filter((id) => id != userId);
         }
 
-
         socket.to(roomId).broadcast.emit('user-disconnected', userId, { roomName, userName });
         console.log(`User (${userId}) "${userName}" left "${roomName}" (${roomId})`);
 
-        console.log(rooms[roomId]);
         if(rooms[roomId] && rooms[roomId].users.lenght === 0){
             delete rooms.roomId;
         }
+        
+        console.log('Current rooms: ', rooms);
     })
 
     socket.on("disconnect", (reason) => {
