@@ -79,7 +79,7 @@ io.on('connection', socket => {
         console.log(`User (${userId}) "${userName}" left "${roomName}" (${roomId})`);
 
         if(rooms[roomId] && rooms[roomId].users.length == 0){
-            delete rooms.roomId;
+            delete rooms[roomId];
             console.log('Room deleted because is empty: ', roomId);
         }
 
