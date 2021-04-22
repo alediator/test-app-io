@@ -80,6 +80,7 @@ io.on('connection', socket => {
 
         if(rooms[roomId] && rooms[roomId].users.length == 0){
             delete rooms.roomId;
+            console.log('Room deleted because is empty: ', roomId);
         }
 
         console.log('Current rooms: ', rooms);
