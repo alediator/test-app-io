@@ -23,20 +23,13 @@ app.head('/_ping', function(req, res){
 
 // TODO: use REDIS for storing this stuff
 let rooms = {};
-let users = {};
 
 io.on('connection', socket => {
     console.log('Socket conneted ' + socket.id);
 
     socket.on('join-room', (roomId, userId, metadata) => {
-
-        console.log('join-room');
-        console.log(metadata);
-
-
         userName = metadata && metadata.userName ? metadata.userName: null;
         roomName = metadata && metadata.roomName ? metadata.roomName: null;
-
         if (rooms[roomId]) {
             roomName = rooms[roomId].roomName;
             rooms[roomId].users.push(userId);
@@ -48,8 +41,8 @@ io.on('connection', socket => {
             };
         }
 
-
         console.log(`User (${userId}) "${userName}" joined "${roomName}" (${roomId})`);
+
         socket.join(roomId);
         socket.to(roomId).broadcast.emit('user-connected', userId, { roomName, userName });
 
@@ -62,14 +55,8 @@ io.on('connection', socket => {
     });
 
     socket.on('leave-room', (roomId, userId, metadata) => {
-
-        console.log('leave-room');
-        console.log(metadata);
-
-
         userName = metadata && metadata.userName ? metadata.userName: null;
         roomName = metadata && metadata.roomName ? metadata.roomName: null;
-
         if (rooms[roomId]) {
             roomName = rooms[roomId].roomName;
             rooms[roomId].users = rooms[roomId].users.filter((id) => id != userId);
@@ -82,7 +69,6 @@ io.on('connection', socket => {
             delete rooms[roomId];
             console.log('Room deleted because is empty: ', roomId);
         }
-
         console.log('Current rooms: ', rooms);
     })
 
