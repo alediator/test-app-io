@@ -1158,8 +1158,7 @@ class VideoCallRoomComponent {
     }
     initializeIo() {
         this.myPeer = new Peer(this.currentUserId, {
-            url: 'https://test-app-peer.herokuapp.com',
-            debug: 3
+            url: 'https://test-app-peer.herokuapp.com'
         });
         this.route.params.subscribe((params) => {
             console.log(params);
@@ -1204,7 +1203,7 @@ class VideoCallRoomComponent {
                     call.answer(stream);
                     call.on('stream', (otherUserVideoStream) => {
                         console.log('receiving other stream', otherUserVideoStream);
-                        this.addOtherUserVideo(call.metadata.userId, call.metadata.userName, otherUserVideoStream);
+                        this.addOtherUserVideo(call.metadata.userId, call.metadata.userName, call.metadata.roomName, otherUserVideoStream);
                     });
                     call.on('error', (err) => {
                         console.error(err);
@@ -1218,12 +1217,13 @@ class VideoCallRoomComponent {
                         const call = this.myPeer.call(userId, stream, {
                             metadata: {
                                 userId: this.currentUserId,
-                                userName: this.currentUserName
+                                userName: this.currentUserName,
+                                roomName: this.roomName
                             },
                         });
                         call.on('stream', (otherUserVideoStream) => {
                             console.log('receiving other user stream after his connection');
-                            this.addOtherUserVideo(userId, userName, otherUserVideoStream);
+                            this.addOtherUserVideo(userId, userName, roomName, otherUserVideoStream);
                         });
                         call.on('close', () => {
                             this.videos = this.videos.filter((video) => video.userId !== userId);
@@ -1275,12 +1275,13 @@ class VideoCallRoomComponent {
         });
         this.videoSize = this.getVideoSize(this.videos.length);
     }
-    addOtherUserVideo(userId, userName, stream) {
+    addOtherUserVideo(userId, userName, roomName, stream) {
         const alreadyExisting = this.videos.some(video => video.userId === userId);
         if (alreadyExisting) {
             console.log(this.videos, userId);
             return;
         }
+        this.roomName = roomName;
         this.videos.push({
             muted: false,
             srcObject: stream,
