@@ -1158,7 +1158,8 @@ class VideoCallRoomComponent {
     }
     initializeIo() {
         this.myPeer = new Peer(this.currentUserId, {
-            url: 'https://test-app-peer.herokuapp.com'
+            url: 'https://test-app-peer.herokuapp.com',
+            debug: 3
         });
         this.route.params.subscribe((params) => {
             console.log(params);
@@ -1185,8 +1186,8 @@ class VideoCallRoomComponent {
         if (this.micro || this.camera) {
             this.streamInitialized = true;
             navigator.mediaDevices.getUserMedia({
-                audio: this.micro,
-                video: this.camera,
+                audio: true,
+                video: true,
             })
                 .catch((err) => {
                 console.error('[Error] Not able to retrieve user media:', err);
@@ -1196,6 +1197,8 @@ class VideoCallRoomComponent {
                 if (stream) {
                     this.myStream = stream;
                     this.addMyVideo(stream);
+                    this.showCam(this.camera);
+                    this.muteMicro(this.micro);
                 }
                 // TODO: move all this code to another function because it is not related with the media itself.
                 this.myPeer.on('call', (call) => {
@@ -1293,15 +1296,25 @@ class VideoCallRoomComponent {
     onLoadedMetadata(event) {
         event.target.play();
     }
-    showCam() {
+    showCam(enable) {
         console.log('show/hidde cam');
-        this.camera = !this.camera;
+        if (typeof (enable) === "undefined") {
+            this.camera = !this.camera;
+        }
+        else {
+            this.camera = enable;
+        }
         this.myStream.getVideoTracks()[0].enabled = this.camera;
         this.initializeMedia();
     }
-    muteMicro() {
+    muteMicro(enable) {
         console.log('mute/unmute micro');
-        this.micro = !this.micro;
+        if (typeof (enable) === "undefined") {
+            this.micro = !this.micro;
+        }
+        else {
+            this.micro = enable;
+        }
         this.myStream.getAudioTracks()[0].enabled = this.micro;
         this.initializeMedia();
     }

@@ -280,17 +280,6 @@ AuthConstants.HEADERS = {
 
 /***/ }),
 
-/***/ 1:
-/*!********************!*\
-  !*** ws (ignored) ***!
-  \********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
 /***/ "1cRO":
 /*!********************************************************!*\
   !*** ./src/app/core/services/logger/logger.service.ts ***!
