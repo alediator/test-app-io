@@ -567,7 +567,8 @@ class RoomConfigFormComponent {
             name: [storedConfig ? storedConfig.name : ''],
             username: [storedConfig ? storedConfig.username : ''],
             camera: [storedConfig ? storedConfig.camera : true],
-            microphone: [storedConfig ? storedConfig.microphone : true]
+            microphone: [storedConfig ? storedConfig.microphone : true],
+            new: [true]
         });
     }
     /**
@@ -601,6 +602,7 @@ class RoomConfigFormComponent {
             username: this.roomConfigFormGroup.value.username,
             microphone: this.roomConfigFormGroup.value.microphone,
             camera: this.roomConfigFormGroup.value.camera,
+            new: false
         }));
         this.ref.close();
         this.router.navigate([`/video-call/${this.roomConfigFormGroup.value.roomId}`]);

@@ -1152,6 +1152,7 @@ class VideoCallRoomComponent {
         this.currentUserName = roomConfig.username;
         this.micro = roomConfig.microphone;
         this.camera = roomConfig.camera;
+        this.newRoom = roomConfig.new === true;
         console.log(roomConfig);
         this.initializeIo();
         this.initializeMedia();
@@ -1167,7 +1168,12 @@ class VideoCallRoomComponent {
             // Room identifier: from the url
             this.roomId = params.roomId;
             this.myPeer.on('open', () => {
-                this.joinRoom(this.roomId);
+                if (this.newRoom) {
+                    this.createRoom(this.roomId);
+                }
+                else {
+                    this.joinRoom(this.roomId);
+                }
             });
         });
         this.socket.on('user-disconnected', (userId) => {
@@ -1243,6 +1249,16 @@ class VideoCallRoomComponent {
     joinRoom(roomId) {
         console.log('Joining ', this.currentUserId, ' to ', roomId);
         this.socket.emit('join-room', roomId, this.currentUserId, {
+            userName: this.currentUserName,
+            roomName: this.roomName
+        });
+    }
+    /**
+     * Current peer creates the selected room.
+     */
+    createRoom(roomId) {
+        console.log('User ', this.currentUserId, ' creating ', roomId);
+        this.socket.emit('create-room', roomId, this.currentUserId, {
             userName: this.currentUserName,
             roomName: this.roomName
         });
