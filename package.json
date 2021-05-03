@@ -4,7 +4,6 @@
   "description": "Socket managment for Aareon's video chat",
   "main": "index.js",
   "scripts": {
-    "build": "npm i",
     "start": "node dist/server.js"
   },
   "author": "Aareon Spain",
