@@ -1168,12 +1168,7 @@ class VideoCallRoomComponent {
             // Room identifier: from the url
             this.roomId = params.roomId;
             this.myPeer.on('open', () => {
-                if (this.newRoom) {
-                    this.createRoom(this.roomId);
-                }
-                else {
-                    this.joinRoom(this.roomId);
-                }
+                this.joinRoom(this.roomId);
             });
         });
         this.socket.on('user-disconnected', (userId) => {
@@ -1193,8 +1188,8 @@ class VideoCallRoomComponent {
         if (this.micro || this.camera) {
             this.streamInitialized = true;
             navigator.mediaDevices.getUserMedia({
-                audio: this.micro,
-                video: this.camera,
+                audio: true,
+                video: true,
             })
                 .catch((err) => {
                 console.error('[Error] Not able to retrieve user media:', err);
@@ -1204,6 +1199,8 @@ class VideoCallRoomComponent {
                 if (stream) {
                     this.myStream = stream;
                     this.addMyVideo(stream);
+                    this.showCam(this.camera);
+                    this.muteMicro(this.micro);
                 }
                 // TODO: move all this code to another function because it is not related with the media itself.
                 this.myPeer.on('call', (call) => {
@@ -1249,16 +1246,6 @@ class VideoCallRoomComponent {
     joinRoom(roomId) {
         console.log('Joining ', this.currentUserId, ' to ', roomId);
         this.socket.emit('join-room', roomId, this.currentUserId, {
-            userName: this.currentUserName,
-            roomName: this.roomName
-        });
-    }
-    /**
-     * Current peer creates the selected room.
-     */
-    createRoom(roomId) {
-        console.log('User ', this.currentUserId, ' creating ', roomId);
-        this.socket.emit('create-room', roomId, this.currentUserId, {
             userName: this.currentUserName,
             roomName: this.roomName
         });
@@ -1311,15 +1298,25 @@ class VideoCallRoomComponent {
     onLoadedMetadata(event) {
         event.target.play();
     }
-    showCam() {
+    showCam(enable) {
         console.log('show/hidde cam');
-        this.camera = !this.camera;
+        if (typeof (enable) === "undefined") {
+            this.camera = !this.camera;
+        }
+        else {
+            this.camera = enable;
+        }
         this.myStream.getVideoTracks()[0].enabled = this.camera;
         this.initializeMedia();
     }
-    muteMicro() {
+    muteMicro(enable) {
         console.log('mute/unmute micro');
-        this.micro = !this.micro;
+        if (typeof (enable) === "undefined") {
+            this.micro = !this.micro;
+        }
+        else {
+            this.micro = enable;
+        }
         this.myStream.getAudioTracks()[0].enabled = this.micro;
         this.initializeMedia();
     }
