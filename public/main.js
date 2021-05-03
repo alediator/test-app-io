@@ -1884,7 +1884,9 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
             _core_core_module__WEBPACK_IMPORTED_MODULE_7__["CoreModule"],
             _shared_shared_module__WEBPACK_IMPORTED_MODULE_8__["SharedModule"],
             ngx_socket_io__WEBPACK_IMPORTED_MODULE_3__["SocketIoModule"].forRoot({
+                // url: 'http://localhost:3000'
                 url: 'https://test-app-io.herokuapp.com'
+                // url: 'https://smartvideo-io-216.dev.aareonit.fr'
             }),
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]], imports: [_angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"],
@@ -1907,7 +1909,9 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     _core_core_module__WEBPACK_IMPORTED_MODULE_7__["CoreModule"],
                     _shared_shared_module__WEBPACK_IMPORTED_MODULE_8__["SharedModule"],
                     ngx_socket_io__WEBPACK_IMPORTED_MODULE_3__["SocketIoModule"].forRoot({
+                        // url: 'http://localhost:3000'
                         url: 'https://test-app-io.herokuapp.com'
+                        // url: 'https://smartvideo-io-216.dev.aareonit.fr'
                     }),
                 ],
                 providers: [
