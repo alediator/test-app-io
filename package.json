@@ -4,13 +4,8 @@
   "description": "Socket managment for Aareon's video chat",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "start-js": "node index.js",
-    "fix-lint": "tslint -c tslint.json --fix './src/**/*.ts'",
-    "build": "tsc",
-    "start": "node dist/server.js",
-    "lint": "tslint -c tslint.json './src/**/*.ts'",
-    "dev": "nodemon --watch 'src/**' --ext 'ts' --exec 'ts-node ./src/server.ts'"
+    "build": "npm i",
+    "start": "node dist/server.js"
   },
   "author": "Aareon Spain",
   "license": "ISC",
