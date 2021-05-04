@@ -80,19 +80,19 @@ module.exports = content.locals || {};
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!****************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** multi ./node_modules/roboto-fontface/css/roboto/roboto-fontface.css ./node_modules/primeicons/primeicons.css ./node_modules/primeng/resources/themes/md-light-deeppurple/theme.css ./node_modules/primeng/resources/primeng.min.css ./src/styles.scss ./node_modules/primeflex/primeflex.css ***!
   \****************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/adiaz/development/back-office/node_modules/roboto-fontface/css/roboto/roboto-fontface.css */"1eg4");
-__webpack_require__(/*! /home/adiaz/development/back-office/node_modules/primeicons/primeicons.css */"QSGA");
-__webpack_require__(/*! /home/adiaz/development/back-office/node_modules/primeng/resources/themes/md-light-deeppurple/theme.css */"e9Yx");
-__webpack_require__(/*! /home/adiaz/development/back-office/node_modules/primeng/resources/primeng.min.css */"wDIQ");
-__webpack_require__(/*! /home/adiaz/development/back-office/src/styles.scss */"+EN/");
-module.exports = __webpack_require__(/*! /home/adiaz/development/back-office/node_modules/primeflex/primeflex.css */"vd+B");
+__webpack_require__(/*! /home/psanchez/Projects/DIL/aareon-smart-platform/smartvideo/back-office/node_modules/roboto-fontface/css/roboto/roboto-fontface.css */"1eg4");
+__webpack_require__(/*! /home/psanchez/Projects/DIL/aareon-smart-platform/smartvideo/back-office/node_modules/primeicons/primeicons.css */"QSGA");
+__webpack_require__(/*! /home/psanchez/Projects/DIL/aareon-smart-platform/smartvideo/back-office/node_modules/primeng/resources/themes/md-light-deeppurple/theme.css */"e9Yx");
+__webpack_require__(/*! /home/psanchez/Projects/DIL/aareon-smart-platform/smartvideo/back-office/node_modules/primeng/resources/primeng.min.css */"wDIQ");
+__webpack_require__(/*! /home/psanchez/Projects/DIL/aareon-smart-platform/smartvideo/back-office/src/styles.scss */"+EN/");
+module.exports = __webpack_require__(/*! /home/psanchez/Projects/DIL/aareon-smart-platform/smartvideo/back-office/node_modules/primeflex/primeflex.css */"vd+B");
 
 
 /***/ }),
@@ -708,5 +708,5 @@ module.exports = content.locals || {};
 
 /***/ })
 
-},[[3,"runtime"]]]);
+},[[2,"runtime"]]]);
 //# sourceMappingURL=styles.js.map

@@ -239,7 +239,7 @@ LoginFormComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/adiaz/development/back-office/src/main.ts */"zUnb");
+module.exports = __webpack_require__(/*! /home/psanchez/Projects/DIL/aareon-smart-platform/smartvideo/back-office/src/main.ts */"zUnb");
 
 
 /***/ }),
@@ -277,17 +277,6 @@ AuthConstants.HEADERS = {
     FINGERPRINT: 'fingerprint',
 };
 
-
-/***/ }),
-
-/***/ 1:
-/*!********************!*\
-  !*** ws (ignored) ***!
-  \********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/* (ignored) */
 
 /***/ }),
 
@@ -578,7 +567,8 @@ class RoomConfigFormComponent {
             name: [storedConfig ? storedConfig.name : ''],
             username: [storedConfig ? storedConfig.username : ''],
             camera: [storedConfig ? storedConfig.camera : true],
-            microphone: [storedConfig ? storedConfig.microphone : true]
+            microphone: [storedConfig ? storedConfig.microphone : true],
+            new: [true]
         });
     }
     /**
@@ -612,6 +602,7 @@ class RoomConfigFormComponent {
             username: this.roomConfigFormGroup.value.username,
             microphone: this.roomConfigFormGroup.value.microphone,
             camera: this.roomConfigFormGroup.value.camera,
+            new: false
         }));
         this.ref.close();
         this.router.navigate([`/video-call/${this.roomConfigFormGroup.value.roomId}`]);
@@ -1895,7 +1886,9 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
             _core_core_module__WEBPACK_IMPORTED_MODULE_7__["CoreModule"],
             _shared_shared_module__WEBPACK_IMPORTED_MODULE_8__["SharedModule"],
             ngx_socket_io__WEBPACK_IMPORTED_MODULE_3__["SocketIoModule"].forRoot({
+                // url: 'http://localhost:3000'
                 url: 'https://test-app-io.herokuapp.com'
+                // url: 'https://smartvideo-io-216.dev.aareonit.fr'
             }),
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]], imports: [_angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"],
@@ -1918,7 +1911,9 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     _core_core_module__WEBPACK_IMPORTED_MODULE_7__["CoreModule"],
                     _shared_shared_module__WEBPACK_IMPORTED_MODULE_8__["SharedModule"],
                     ngx_socket_io__WEBPACK_IMPORTED_MODULE_3__["SocketIoModule"].forRoot({
+                        // url: 'http://localhost:3000'
                         url: 'https://test-app-io.herokuapp.com'
+                        // url: 'https://smartvideo-io-216.dev.aareonit.fr'
                     }),
                 ],
                 providers: [
