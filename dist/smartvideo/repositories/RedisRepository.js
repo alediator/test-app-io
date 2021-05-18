@@ -5,9 +5,9 @@ const redis = require("redis");
 class RedisRepository {
     constructor() {
         this.client = redis.createClient({
-            port: Number(process.env.PORT),
-            host: process.env.URL,
-            password: process.env.REDIS,
+            port: Number(process.env.REDISPORT),
+            host: process.env.REDISURL,
+            password: process.env.REDISSECRET,
         });
         this.rooms = new Map();
     }
