@@ -26,7 +26,7 @@ class LeaveRoomListener {
         this.socket.to(roomId).emit('user-disconnected', userId, { roomName, userName });
         console.log(`User (${userId}) "${userName}" left "${roomName}" (${roomId})`);
         this.roomsRepository.deleteIfEmpty(roomId);
-        console.log('Current rooms: ', this.roomsRepository.getRooms());
+        //console.log('Current rooms: ', this.roomsRepository.getRooms());
     }
 }
 exports.LeaveRoomListener = LeaveRoomListener;

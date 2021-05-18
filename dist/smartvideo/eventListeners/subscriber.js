@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SocketIoSubscriber = void 0;
-const inMemoryRoomRepository_1 = require("../repositories/inMemoryRoomRepository");
+const RedisRepository_1 = require("../repositories/RedisRepository");
 const create_1 = require("./create");
 const join_1 = require("./join");
 const leave_1 = require("./leave");
@@ -9,7 +9,7 @@ const disconnect_1 = require("./disconnect");
 class SocketIoSubscriber {
     constructor() {
         // TODO: Use an alternative room reporitory
-        this.roomsRepository = new inMemoryRoomRepository_1.InMemoryRoomRepository();
+        this.roomsRepository = new RedisRepository_1.RedisRepository();
     }
     subscribe(io) {
         io.on('connection', (socket) => {

@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.JoinRoomListener = void 0;
-const room_1 = require("../model/room");
 class JoinRoomListener {
     constructor(socket, roomsRepository) {
         this.event = 'join-room';
@@ -19,22 +18,23 @@ class JoinRoomListener {
         const userName = metadata && metadata.userName ? metadata.userName : null;
         let room = this.roomsRepository.getRoom(roomId);
         if (!room) {
-            console.log(`User (${userId}) "${userName}" created "${metadata.roomName}" (${roomId})`);
-            room = new room_1.Room(metadata.roomName, userId);
+            this.socket.emit('no-room', 'Some error happened');
         }
-        const roomName = room.roomName;
-        if (!room.users.includes(userId)) {
-            room.users.push(userId);
+        else {
+            const roomName = room.roomName;
+            if (!room.users.includes(userId)) {
+                room.users.push(userId);
+            }
+            this.roomsRepository.setRoom(roomId, room);
+            console.log(`User (${userId}) "${userName}" joined "${roomName}" (${roomId})`);
+            this.socket.join(roomId);
+            this.socket.to(roomId).emit('user-connected', userId, { roomName, userName });
+            this.socket.on('disconnect', () => {
+                this.socket.to(roomId).emit('user-disconnected', userId, { roomName, userName });
+                console.log(`User (${userId}) "${userName}" left "${roomName}" (${roomId}) (disconnected)`);
+            });
+            //console.log('Current rooms: ', this.roomsRepository.getRooms());
         }
-        this.roomsRepository.setRoom(roomId, room);
-        console.log(`User (${userId}) "${userName}" joined "${roomName}" (${roomId})`);
-        this.socket.join(roomId);
-        this.socket.to(roomId).emit('user-connected', userId, { roomName, userName });
-        this.socket.on('disconnect', () => {
-            this.socket.to(roomId).emit('user-disconnected', userId, { roomName, userName });
-            console.log(`User (${userId}) "${userName}" left "${roomName}" (${roomId}) (disconnected)`);
-        });
-        console.log('Current rooms: ', this.roomsRepository.getRooms());
     }
 }
 exports.JoinRoomListener = JoinRoomListener;
